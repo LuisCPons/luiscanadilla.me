@@ -51,7 +51,7 @@ export default function About() {
     },
   ];
   return (
-    <Column maxWidth="m">
+    <Column maxWidth="l">
       <Schema
         as="webPage"
         baseURL={baseURL}

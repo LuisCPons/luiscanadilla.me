@@ -74,7 +74,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     <Row fillWidth>
       <Row maxWidth={12} m={{ hide: true }} />
       <Row fillWidth horizontal="center">
-        <Column as="section" maxWidth="m" horizontal="center" gap="l" paddingTop="24">
+        <Column as="section" maxWidth="l" horizontal="center" gap="l" paddingTop="24">
           <Schema
             as="blogPosting"
             baseURL={baseURL}
@@ -93,7 +93,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
               image: `${baseURL}${person.avatar}`,
             }}
           />
-          <Column maxWidth="s" gap="16" horizontal="center" align="center">
+          <Column maxWidth="m" gap="16" horizontal="center" align="center">
             <SmartLink href="/blog">
               <Text variant="label-strong-m">Blog</Text>
             </SmartLink>
@@ -133,7 +133,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
               marginBottom="8"
             />
           )}
-          <Column as="article" maxWidth="s">
+          <Column as="article" maxWidth="m">
             <CustomMDX source={post.content} />
           </Column>
           
