@@ -7,7 +7,7 @@ const person: Person = {
   name: "Luis Cañadilla",
   role: "AI & Power Platform Specialist",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com", // Adjust later if needed
+  email: "luiscanadillapons@gmail.com", // Adjust later if needed
   location: "Europe/Madrid", 
   languages: ["English", "Spanish"], 
 };
@@ -28,7 +28,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/luiscanadilla/",
+    link: "https://www.linkedin.com/in/luiscp1992/",
     essential: true,
   },
   {
@@ -118,26 +118,38 @@ const about: About = {
   },
   studies: {
     display: true,
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "Founderz",
-        description: <>Master in AI & Innovation. Specialized in modern AI ecosystems, Copilot, and intelligent automation.</>,
+        name: "IE University Executive Education",
+        description: <>Generative AI: Unlocking Enterprise Value (Full Scholarship Awarded).</>,
       },
       {
-        name: "IE University",
-        description: <>Operations & Service Management.</>,
+        name: "Founderz",
+        description: <>Master in AI & Innovation.</>,
+      },
+      {
+        name: "Universidad Complutense de Madrid & Universidad de Alcalá",
+        description: <>M.A., North American Studies.</>,
+      },
+      {
+        name: "Universidad Complutense de Madrid",
+        description: <>B.A., English Studies.</>,
+      },
+      {
+        name: "Universidad Politécnica de Madrid & UCLM",
+        description: <>Computer Engineering (approx. 70% completed).</>,
       },
     ],
   },
   technical: {
     display: true, 
-    title: "Technical skills",
+    title: "Technical Skills",
     skills: [
       {
-        title: "Microsoft Power Platform",
+        title: "Microsoft Power Platform & Dynamics 365",
         description: (
-          <>Building automated cloud flows, business intelligence dashboards, and intelligent agents.</>
+          <>Power BI (DAX, Power Query), Power Automate (cloud/scheduled flows, approvals), Power Apps, Dataverse. Dynamics 365 pipeline and reporting configuration.</>
         ),
         tags: [
           { name: "Power Automate", icon: "dev" },
@@ -147,14 +159,37 @@ const about: About = {
         images: [],
       },
       {
-        title: "Generative AI & Prompt Engineering",
+        title: "Generative AI & Copilot",
         description: (
-          <>Driving responsible adoption of LLMs for enterprise productivity.</>
+          <>Copilot for Microsoft 365, Copilot Studio, AI Builder, prompt engineering, and responsible AI governance.</>
         ),
         tags: [
           { name: "Microsoft Copilot", icon: "dev" },
           { name: "Copilot Studio", icon: "dev" },
-          { name: "ChatGPT", icon: "dev" },
+          { name: "Prompt Engineering", icon: "dev" },
+        ],
+        images: [],
+      },
+      {
+        title: "Data, Analytics & Programming",
+        description: (
+          <>Excel (modeling, advanced formulas), KPI dashboarding, data validation, reporting automation. Introductory Python & SQL.</>
+        ),
+        tags: [
+          { name: "Excel", icon: "dev" },
+          { name: "Python", icon: "dev" },
+          { name: "SQL", icon: "dev" },
+        ],
+        images: [],
+      },
+      {
+        title: "Business Collaboration & Methodologies",
+        description: (
+          <>Microsoft 365 (Teams, SharePoint). Expertise in requirements gathering, stakeholder management, business process improvement, and change management.</>
+        ),
+        tags: [
+          { name: "Microsoft 365", icon: "dev" },
+          { name: "Process Improvement", icon: "dev" },
         ],
         images: [],
       },
