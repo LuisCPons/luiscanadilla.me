@@ -3,7 +3,7 @@ title: "Gamified Onboarding Simulator"
 publishedAt: "2026-05-01"
 summary: "An interactive HTML application built to gamify and streamline the onboarding process, drastically reducing training time for new employees and interns."
 images:
-  - "/images/projects/project-02/cover-02.jpg"
+  - "/images/projects/project-01/cover-02.jpg"
 team:
   - name: "Luis Cañadilla"
     role: "Process Improver & AI Champion"
@@ -25,12 +25,25 @@ Built entirely as a standalone web application, it simulates a game environment 
 
 *Experience the interactive gamified onboarding process below:*
 
-<div style={{ marginTop: '2rem', marginBottom: '2rem', width: '100%' }}>
+<div style={{ 
+  margin: '2rem calc(50% - 50vw)', 
+  width: '100vw', 
+  display: 'flex', 
+  justifyContent: 'center',
+  padding: '0 1rem'
+}}>
   <iframe 
     src="/projects/ie-onboarding.html" 
-    width="100%" 
-    height="800px" 
-    style={{ border: '1px solid #333', borderRadius: '12px', background: '#fff' }}
+    style={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      height: '85vh', 
+      minHeight: '600px', 
+      border: '1px solid rgba(255, 255, 255, 0.1)', 
+      borderRadius: '12px', 
+      background: '#fff',
+      boxShadow: '0 8px 30px rgba(0,0,0,0.12)'
+    }}
     title="Gamified Onboarding Simulator"
   ></iframe>
 </div>
