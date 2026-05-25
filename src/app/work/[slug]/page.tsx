@@ -119,8 +119,15 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <div style={{ maxHeight: '420px', overflow: 'hidden', borderRadius: 'var(--radius-m, 12px)' }}>
-          <Media priority aspectRatio="2.4 / 1" radius="m" alt="image" src={post.metadata.images[0]} />
+        <div style={{
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)',
+          borderRadius: '16px',
+          padding: '24px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Media priority radius="m" alt="image" src={post.metadata.images[0]} />
         </div>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="m">

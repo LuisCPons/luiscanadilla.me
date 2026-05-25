@@ -32,9 +32,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <div style={{ maxHeight: '420px', overflow: 'hidden', borderRadius: 'var(--radius-m, 12px)' }}>
+      <div style={{
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)',
+        borderRadius: '16px',
+        padding: '24px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
         <Carousel
-          aspectRatio="2.4 / 1"
           sizes="(max-width: 960px) 100vw, 960px"
           items={images.map((image) => ({
             slide: image,
