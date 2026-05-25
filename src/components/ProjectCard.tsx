@@ -33,21 +33,42 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Column fillWidth gap="m">
       <div style={{
-        borderRadius: '16px',
-        height: '400px',
+        borderRadius: '12px',
         overflow: 'hidden',
         width: '100%',
+        backgroundColor: '#0a0a0a',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
       }}>
-        <img
-          src={images[0]}
-          alt={title}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
-        />
+        {/* macOS Browser Header */}
+        <div style={{
+          height: '32px',
+          backgroundColor: '#1c1c1e',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '0 16px',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+          gap: '8px',
+        }}>
+          <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ff5f56' }} />
+          <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
+          <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#27c93f' }} />
+        </div>
+        
+        {/* Browser Content (Screenshot) */}
+        <div style={{ height: '360px', width: '100%', position: 'relative' }}>
+          <img
+            src={images[0]}
+            alt={title}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'top center',
+              display: 'block',
+            }}
+          />
+        </div>
       </div>
       <Flex
         s={{ direction: "column" }}
