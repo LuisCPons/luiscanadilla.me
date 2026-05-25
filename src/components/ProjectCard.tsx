@@ -33,11 +33,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Column fillWidth gap="m">
       <div style={{
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)',
         borderRadius: '16px',
-        padding: '16px',
         height: '400px',
         overflow: 'hidden',
+        width: '100%',
       }}>
         <img
           src={images[0]}
@@ -46,8 +45,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'top center',
-            borderRadius: '10px',
+            objectPosition: 'center',
           }}
         />
       </div>
