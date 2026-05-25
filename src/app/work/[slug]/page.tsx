@@ -122,12 +122,21 @@ export default async function Project({
         <div style={{
           background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)',
           borderRadius: '16px',
-          padding: '24px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          padding: '16px',
+          height: '400px',
+          overflow: 'hidden',
         }}>
-          <Media priority radius="m" alt="image" src={post.metadata.images[0]} />
+          <img
+            src={post.metadata.images[0]}
+            alt="image"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'top center',
+              borderRadius: '10px',
+            }}
+          />
         </div>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="m">

@@ -35,17 +35,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div style={{
         background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)',
         borderRadius: '16px',
-        padding: '24px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: '16px',
+        height: '400px',
+        overflow: 'hidden',
       }}>
-        <Carousel
-          sizes="(max-width: 960px) 100vw, 960px"
-          items={images.map((image) => ({
-            slide: image,
-            alt: title,
-          }))}
+        <img
+          src={images[0]}
+          alt={title}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'top center',
+            borderRadius: '10px',
+          }}
         />
       </div>
       <Flex
