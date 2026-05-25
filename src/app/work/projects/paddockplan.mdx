@@ -1,34 +1,62 @@
 ---
-title: "PaddockPlan"
-publishedAt: "2024-05-22"
-summary: "SaaS application built to optimize processes and automate workflows."
+title: "PaddockPlan: AI-Driven Grand Prix Tactical Hub"
+publishedAt: "2026-05-25"
+summary: "A premium, editorial travel planner for Formula 1 fans built on Next.js 16 (App Router), React 19, and tailored with Gemini-assisted AI insights."
 images:
   - "/images/projects/project-01/cover-01.jpg"
 team:
   - name: "Luis Cañadilla"
-    role: "AI & Power Platform Specialist"
+    role: "AI Developer & Architect"
     avatar: "/images/avatar.jpg"
-    linkedIn: "https://www.linkedin.com/in/luiscanadilla/"
+    linkedIn: "https://www.linkedin.com/in/luiscp1992/"
 ---
 
-# PaddockPlan
+## The Genesis
 
-**Reduced manual SLA follow-up by ~70% across 800+ annual cases.**
+As a massive Formula 1 fan, I have had the privilege of attending Grand Prix races at iconic circuits like **Monza, Silverstone, and Barcelona**. 
 
-## Context
-The organization was facing a high volume of manual case management, leading to delayed SLA tracking and inconsistent data reporting. Stakeholders lacked real-time visibility into operational bottlenecks, and staff spent excessive hours following up on individual requests instead of focusing on high-value tasks.
+While the on-track action is unparalleled, the logistics of attending a Grand Prix can be a nightmare. I consistently encountered the same problem: a severe lack of consolidated, insider tips. Finding the best accommodation spots, understanding track drainage for sudden rain, or knowing exactly what gear to pack for each specific circuit required scouring dozens of outdated forums.
 
-## Approach
-Built a SaaS application on Vercel utilizing Antigravity, Copilot Studio, and Power Automate to streamline operations and enhance automated workflows.
-- **Power Automate**: Cloud flows to trigger immediate SLA-threshold alerts and compile automated KPI digests.
-- **Copilot Studio / AI Agents**: Designed and rolled out intelligent agents to assist with data QA, summarization, and template generation.
-- **Vercel & Antigravity**: For modern, fast, and scalable deployment of the web interfaces.
+Armed with my Gemini AI license and the Antigravity developer framework, I decided to solve this problem myself. I set out to build **PaddockPlan**—an intelligent, premium travel hub designed to anticipate the exact needs of F1 fans, combining human experience with AI-assisted data aggregation.
 
-## Demo
-*[Insert 60–90 sec Loom video here]*
+## Product Demo
 
-## What I learned
-This project underscored the incredible value of combining standard RPA (Power Automate) with generative AI (Copilot Studio). While Power Automate handled the strict rules-based SLA tracking effortlessly, integrating LLMs allowed us to tackle unstructured data (like summarizing case threads and QAing data entries) which previously required human intervention. The key challenge was ensuring responsible AI adoption—implementing strict validation routines before any AI-generated data was shared with external stakeholders.
+*[Insert your 60-second Loom video here demonstrating the Quick Planner interactive sliders]*
+
+> **How to add your video:** Record a Loom video where you smoothly adjust the budget and style sliders. Grab the embed link and replace this text with the `<iframe>` embed code.
+
+## The Architecture & Tech Stack
+
+To ensure a lightning-fast, premium editorial feel, I built the platform on the absolute bleeding edge of the React ecosystem:
+- **Next.js 16 (App Router):** Leveraging server components and advanced routing for optimal SEO and performance.
+- **React 19:** Utilizing the newest concurrent features for smooth rendering.
+- **Tailwind CSS v4:** For rapid, highly-customizable responsive styling.
+- **Motion for React (Framer Motion):** Implementing buttery-smooth, physics-based micro-interactions.
+
+## Deep Dive: Technical Implementation
+
+### 1. The Interactive Quick Planner
+The core of the application is the `QuickPlanner.tsx` module. This is a complex, state-driven component that allows users to tailor their Grand Prix weekend dynamically. 
+
+I engineered a custom state-hash mechanism (`gpIndex-budgetIndex-lengthIndex-styleIndex`) that triggers localized `AnimatePresence` rerenders. This ensures that as a user drags the budget or travel style sliders, the recommended tickets, stay strategy, and expense calculations update instantly with flawless, un-interruptible exit/enter animations.
+
+### 2. Climatic Intelligence (API Integration)
+Formula 1 is entirely weather-dependent, and so is the fan experience. To address this, I built the `WeatherModule.tsx`.
+
+This component establishes a real-time connection to the **OpenWeather API**, pulling live coordinate-specific metrics for the selected circuit. 
+
+*[Insert a high-res screenshot of the Weather Module here. Make sure to capture the pulsing "Live" badge.]*
+> **How to add your image:** Save your screenshot as `weather.png` in `public/images/projects/project-01/` and use this code: `![Climatic Intelligence](/images/projects/project-01/weather.png)`
+
+The module doesn't just display the temperature; it processes the API payload against historical averages to generate intelligent, dynamic gear recommendations. For example:
+- If `rainRisk === 'High'`, the UI dynamically renders a visual raindrop CSS overlay and prompts the user to pack a poncho.
+- If temperatures exceed 28°C, it triggers an "Extreme Heat Alert" suggesting SPF 50 and hydration salts.
+
+### 3. The Premium Blueprint Dashboard
+To monetize the insights, I developed a gated `BlueprintDashboard.tsx` component (weighing in at 48KB of complex logic). It features blurred placeholder heatmaps and expense charts, driving users toward a premium access modal.
+
+## Outcome
+PaddockPlan stands as a testament to how modern AI developer tools (Gemini) can accelerate the creation of highly complex, API-driven web applications. It successfully bridges a deeply personal passion with high-end technical execution.
 
 ## Links
 - [Live site](https://paddockplan.vercel.app/)
