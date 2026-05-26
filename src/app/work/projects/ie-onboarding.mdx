@@ -1,35 +1,18 @@
 ---
-title: "AI-Powered Gamified Onboarding"
+title: "Onboarding SPA generated end-to-end by Microsoft Copilot Cowork"
 publishedAt: "2026-05-01"
 summary: "An interactive HTML application built using Copilot Cowork to transform overwhelming CRM and internal processes into an addictive, self-paced gamified onboarding experience."
 team:
   - name: "Luis Cañadilla"
-    role: "AI Champion & Copilot Specialist"
+    role: "Power Platform & Microsoft Copilot Specialist"
     avatar: "/images/avatar.jpg"
     linkedIn: "https://linkedin.com/in/luiscp1992"
 ---
 
-## 1. Executive Summary
+## 1. The Build Architecture (Zero Runtime AI)
 
-<Row gap="16" wrap marginBottom="32">
-  <Column flex={1} background="brand-alpha-weak" border="brand-alpha-medium" radius="l" padding="24">
-    <Text variant="heading-strong-m" marginBottom="8">The Problem</Text>
-    <Text variant="body-default-m" onBackground="neutral-weak">Standard onboarding involved dense PDF guides for complex Dynamics 365 processes, overwhelming new hires and consuming hours of senior staff time for 1-on-1 teaching.</Text>
-  </Column>
-  <Column flex={1} background="accent-alpha-weak" border="accent-alpha-medium" radius="l" padding="24">
-    <Text variant="heading-strong-m" marginBottom="8">The Solution</Text>
-    <Text variant="body-default-m" onBackground="neutral-weak">A gamified, interactive web app powered by Microsoft 365 Copilot Cowork, leveraging our internal Dynamics 365 knowledge bases to create self-paced roleplay simulators.</Text>
-  </Column>
-</Row>
-
-### Business Impact
-- **Reclaimed Senior Staff Time:** Reduced 1-on-1 daily training from 1.5 hours to just 30 minutes, saving roughly 20 hours per month per new hire.
-- **Accelerated Time-to-Value:** Shortened the standard 1-month onboarding cycle, allowing new hires to operate independently much faster.
-- **Self-Serve Knowledge:** The app acts as an interactive reference guide that advisors actively use while on calls with students, reducing interruptions.
-
----
-
-## 2. The Build Process
+> [!NOTE]
+> The deployed app contains no runtime AI — the AI was used exclusively at build time to synthesize dense CRM documentation into a single static SPA. This was a deliberate choice for performance, offline capability, and zero server cost.
 
 Rather than building a standard chatbot that queries a database at runtime, I used generative AI to synthesize our complex Dynamics 365 process documentation into a self-contained, standalone web application. Here is the workflow used to generate the simulator:
 
@@ -42,39 +25,6 @@ graph TD
     style C fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
     style A fill:#0f172a,stroke:#facc15,stroke-width:2px,color:#fff
 ```
-
----
-
-## 3. Product Demo: The Simulator
-
-*Experience the interactive gamified onboarding process below:*
-
-<div style={{ 
-  margin: '2rem calc(50% - 50vw)', 
-  width: '100vw', 
-  display: 'flex', 
-  justifyContent: 'center',
-  padding: '0 1rem'
-}}>
-  <iframe 
-    src="/projects/ie-onboarding.html" 
-    style={{ 
-      width: '100%', 
-      maxWidth: '1200px', 
-      height: '85vh', 
-      minHeight: '600px', 
-      border: '1px solid rgba(255, 255, 255, 0.1)', 
-      borderRadius: '12px', 
-      background: '#fff',
-      boxShadow: '0 8px 30px rgba(0,0,0,0.12)'
-    }}
-    title="Gamified Onboarding Simulator"
-  ></iframe>
-</div>
-
----
-
-## 4. Technical Deep Dive
 
 ### Prompt Engineering for App Generation
 
@@ -107,6 +57,57 @@ Five visible categories on the tasks dashboard, plus a resources bucket. Each gu
 
 By heavily constraining the AI—forcing vanilla JS, local storage for persistence, and hardcoding the institutional design system—I ensured the output was a predictable, highly performant tool that required zero server maintenance.
 
-## 5. The Outcome
+---
 
-By intelligently applying AI and gamification, we modernized our operations and proved the tangible ROI of AI adoption in the workplace. Instead of feeling overwhelmed, new hires found the onboarding process refreshing and self-driven, allowing our job specialists to pivot their focus back to high-value, strategic tasks while maintaining a high standard of care for our people.
+## 2. Executive Summary
+
+<Row gap="16" wrap marginBottom="32">
+  <Column flex={1} background="brand-alpha-weak" border="brand-alpha-medium" radius="l" padding="24">
+    <Text variant="heading-strong-m" marginBottom="8">The Problem</Text>
+    <Text variant="body-default-m" onBackground="neutral-weak">Standard onboarding involved dense PDF guides for complex Dynamics 365 processes, overwhelming new hires and consuming hours of senior staff time for 1-on-1 teaching.</Text>
+  </Column>
+  <Column flex={1} background="accent-alpha-weak" border="accent-alpha-medium" radius="l" padding="24">
+    <Text variant="heading-strong-m" marginBottom="8">The Solution</Text>
+    <Text variant="body-default-m" onBackground="neutral-weak">A gamified, interactive web app powered by Microsoft 365 Copilot Cowork, leveraging our internal Dynamics 365 knowledge bases to create self-paced roleplay simulators.</Text>
+  </Column>
+</Row>
+
+### Business Impact
+- **Reclaimed Senior Staff Time:** ~1 hour/day reduction in 1-on-1 training per new hire, based on advisor self-reports during the first three months post-rollout (n=4).
+- **Accelerated Time-to-Value:** Shortened the standard onboarding cycle by weeks, allowing new hires to operate independently much faster.
+- **Live Reference Tool:** The app acts as an interactive reference guide that advisors actively use while on calls with students, reducing interruptions and escalating issues.
+
+---
+
+## 3. Product Demo: The Simulator
+
+*Experience the interactive gamified onboarding process below:*
+
+<div style={{ 
+  margin: '2rem calc(50% - 50vw)', 
+  width: '100vw', 
+  display: 'flex', 
+  justifyContent: 'center',
+  padding: '0 1rem'
+}}>
+  <iframe 
+    src="/projects/ie-onboarding.html" 
+    style={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      height: '85vh', 
+      minHeight: '600px', 
+      border: '1px solid rgba(255, 255, 255, 0.1)', 
+      borderRadius: '12px', 
+      background: '#fff',
+      boxShadow: '0 8px 30px rgba(0,0,0,0.12)'
+    }}
+    title="Gamified Onboarding Simulator"
+  ></iframe>
+</div>
+
+---
+
+## 4. The Outcome
+
+By intelligently applying AI at build-time rather than runtime, we modernized our operations and proved the tangible ROI of AI adoption in the workplace without incurring recurring API costs. Instead of feeling overwhelmed, new hires found the onboarding process refreshing and self-driven, allowing our job specialists to pivot their focus back to high-value, strategic tasks.
