@@ -87,7 +87,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I started my career at IE University in 2023 as an Operations & Data Specialist in Student Services, where I now own a Dynamics 365 case pipeline of 800+ requests per year and lead the team's internal AI adoption as IE's AI Champion. In that role I've shipped a Copilot Studio agent to production and built Power Automate flows that handle SLA monitoring, KPI digests, and recurring coordination work.
+        I started working at IE University in 2023 as an Immigration and Relocation Specialist for foreign students, but have since shifted toward more AI-oriented roles within my department. Today, as an Operations & Data Specialist, I own a Dynamics 365 case pipeline of 800+ requests per year and lead the team's internal AI adoption as IE's AI Champion. In this capacity, I've shipped a Copilot Studio agent to production and built Power Automate flows that handle SLA monitoring, KPI digests, and recurring coordination work.
         <br /><br />
         Alongside the day job, I've been deliberately specialising in Microsoft AI — completing a Master in AI & Innovation at Founderz, earning a full scholarship to IE Executive Education's Generative AI: Unlocking Enterprise Value programme, and tracking Microsoft's Copilot and Power Platform certifications (AB-900, PL-900, PL-200).
         <br /><br />
@@ -124,7 +124,7 @@ const about: About = {
     institutions: [
       {
         name: "Founderz",
-        description: <>Master in AI & Innovation (online, 2025–2026).</>,
+        description: <>Master in AI & Innovation (online, 2026).</>,
       },
       {
         name: "IE University Executive Education",
@@ -156,6 +156,7 @@ const about: About = {
           <>Data Visualization in Excel — Macquarie University</>,
           <>Programming for Everybody (Python) — University of Michigan</>,
           <>Python Data Structures — University of Michigan</>,
+          <>IE Staff Self-Leadership Program (Feb–Mar 2026)</>,
         ],
       },
       {
@@ -163,7 +164,6 @@ const about: About = {
         items: [
           <>Microsoft Applied Skills — AB-900 (Configure administration for Microsoft 365 Copilot and Copilot agents)</>,
           <>Generative AI: Unlocking Enterprise Value<br/>IE University Executive Education — Full Scholarship Awarded</>,
-          <>IE Staff Self-Leadership Program (Feb–Mar 2026)</>,
         ],
       },
       {
