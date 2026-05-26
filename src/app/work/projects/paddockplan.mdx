@@ -47,7 +47,8 @@ graph TD
 
 ## 3. Product Demo
 
-*The interface utilizes a "Stealth Terminal" paradigm (JetBrains Mono, high contrast) mimicking F1 telemetry walls to build trust in the AI's precision.*
+### Phase 1: Tactical Intake
+*The intake form utilizes a "Stealth Terminal" paradigm (JetBrains Mono, high contrast) mimicking F1 telemetry walls to build trust in the AI's precision before asking the user for their constraints.*
 
 <div style={{ 
   margin: '2rem calc(50% - 50vw)', 
@@ -61,6 +62,32 @@ graph TD
     style={{ 
       width: '100%', 
       maxWidth: '1200px', 
+      height: '60vh', 
+      minHeight: '400px', 
+      border: '1px solid rgba(255, 255, 255, 0.1)', 
+      borderRadius: '12px', 
+      background: '#000',
+      boxShadow: '0 8px 30px rgba(0,0,0,0.4)'
+    }}
+    title="PaddockPlan Intake Demo"
+  ></iframe>
+</div>
+
+### Phase 2: AI-Generated Blueprint
+*Upon submission, the Next.js Edge function maps the LLM's strict JSON response to this dashboard. This is where the business value is delivered, featuring tiered recommendations and integrated CPA affiliate links.*
+
+<div style={{ 
+  margin: '2rem calc(50% - 50vw)', 
+  width: '100vw', 
+  display: 'flex', 
+  justifyContent: 'center',
+  padding: '0 1rem'
+}}>
+  <iframe 
+    src="https://paddockplan.vercel.app/blueprint/silverstone" 
+    style={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
       height: '85vh', 
       minHeight: '600px', 
       border: '1px solid rgba(255, 255, 255, 0.1)', 
@@ -68,7 +95,7 @@ graph TD
       background: '#000',
       boxShadow: '0 8px 30px rgba(0,0,0,0.4)'
     }}
-    title="PaddockPlan Live Deployment"
+    title="PaddockPlan Blueprint Demo"
   ></iframe>
 </div>
 
