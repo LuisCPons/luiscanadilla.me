@@ -36,28 +36,28 @@ const protectedRoutes: ProtectedRoutesConfig = {
 };
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 
-const heading = Geist({
+const heading = Inter({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
-const body = Geist({
+const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const label = Geist({
+const label = Inter({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
 });
 
-const code = Geist_Mono({
+const code = JetBrains_Mono({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
@@ -106,15 +106,15 @@ const effects: EffectsConfig = {
     radius: 100,
   },
   gradient: {
-    display: false,
-    opacity: 100,
+    display: true,
+    opacity: 80,
     x: 50,
-    y: 60,
+    y: -20,
     width: 100,
-    height: 50,
+    height: 100,
     tilt: 0,
-    colorStart: "accent-background-strong",
-    colorEnd: "page-background",
+    colorStart: "brand-background-strong",
+    colorEnd: "accent-background-strong",
   },
   dots: {
     display: true,
