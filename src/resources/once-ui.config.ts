@@ -20,8 +20,8 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
@@ -33,7 +33,6 @@ const display: DisplayConfig = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
 // Import and set font for each variant
@@ -190,13 +189,13 @@ const schema: SchemaConfig = {
   type: "Person",
   name: "Luis Cañadilla",
   description: home.description,
-  email: "luiscanadilla@example.com",
+  email: "luiscanadillapons@gmail.com",
 };
 
 // social links
 const sameAs: SameAsConfig = {
   threads: "",
-  linkedin: "https://www.linkedin.com/in/luiscanadilla/",
+  linkedin: "https://linkedin.com/in/luiscp1992",
   discord: "",
 };
 

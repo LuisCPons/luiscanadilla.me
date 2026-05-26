@@ -5,11 +5,11 @@ const person: Person = {
   firstName: "Luis",
   lastName: "Cañadilla",
   name: "Luis Cañadilla",
-  role: "AI & Power Platform Specialist",
+  role: "Microsoft Copilot & Power Platform Consultant",
   avatar: "/images/avatar.jpg",
   email: "luiscanadillapons@gmail.com", // Adjust later if needed
   location: "Europe/Madrid", 
-  languages: ["English", "Spanish"], 
+  languages: ["Spanish — Native", "Catalan — Bilingual", "English — C2", "Italian — B1"], 
 };
 
 const newsletter: Newsletter = {
@@ -28,7 +28,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/luiscp1992/",
+    link: "https://linkedin.com/in/luiscp1992",
     essential: true,
   },
   {
@@ -45,9 +45,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as an ${person.role}`,
-  headline: <>Scaling processes with Microsoft AI & Automation</>,
+  headline: <>Microsoft Copilot & Power Platform consulting.</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Featured Work</strong>{" "}
@@ -61,7 +61,7 @@ const home: Home = {
   },
   subline: (
     <>
-      Operations and Power Platform professional driving responsible adoption of <Text as="span" size="xl" weight="strong">Microsoft Copilot</Text> and generative AI. Designing, automating, and scaling workflows.
+      I design and ship Copilot Studio agents and Power Platform automations in production. Currently leading Copilot adoption at IE University across an 800+ case-per-year operations pipeline.
     </>
   ),
 };
@@ -70,7 +70,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} based in Madrid, Spain`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -87,9 +87,11 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I am an Operations and Microsoft Power Platform professional with hands-on experience designing, automating, and scaling business processes using Power BI, Power Automate, and Microsoft Dynamics 365. 
+        I started my career at IE University in 2023 as an Operations & Data Specialist in Student Services, where I now own a Dynamics 365 case pipeline of 800+ requests per year and lead the team's internal AI adoption as IE's AI Champion. In that role I've shipped a Copilot Studio agent to production and built Power Automate flows that handle SLA monitoring, KPI digests, and recurring coordination work.
         <br /><br />
-        As the Internal AI Champion at IE University, I drive the responsible adoption of Microsoft Copilot and generative AI for productivity, content generation, and data quality. I am currently transitioning toward a Power Platform and Copilot Studio consulting role, actively pursuing my Microsoft certification track.
+        Alongside the day job, I've been deliberately specialising in Microsoft AI — completing a Master in AI & Innovation at Founderz, earning a full scholarship to IE Executive Education's Generative AI: Unlocking Enterprise Value programme, and tracking Microsoft's Copilot and Power Platform certifications (AB-900, PL-900, PL-200).
+        <br /><br />
+        My focus going forward is Microsoft Copilot and Power Platform consulting — helping organisations adopt these tools the way IE did: responsibly, with real users, and with measurable outcomes.
       </>
     ),
   },
@@ -121,24 +123,55 @@ const about: About = {
     title: "Education",
     institutions: [
       {
-        name: "IE University Executive Education",
-        description: <>Generative AI: Unlocking Enterprise Value (Full Scholarship Awarded).</>,
+        name: "Founderz",
+        description: <>Master in AI & Innovation (online, 2025–2026).</>,
       },
       {
-        name: "Founderz",
-        description: <>Master in AI & Innovation.</>,
+        name: "IE University Executive Education",
+        description: <>Generative AI: Unlocking Enterprise Value.<br/>In progress 2026 — Full Scholarship Awarded.</>,
       },
       {
         name: "Universidad Complutense de Madrid & Universidad de Alcalá",
-        description: <>M.A., North American Studies.</>,
+        description: <>M.A., North American Studies (2021–2022).</>,
       },
       {
         name: "Universidad Complutense de Madrid",
-        description: <>B.A., English Studies.</>,
+        description: <>B.A., English Studies (2017–2021).</>,
       },
       {
-        name: "Universidad Politécnica de Madrid & UCLM",
-        description: <>Computer Engineering (approx. 70% completed).</>,
+        name: "Universidad Politécnica de Madrid & Universidad de Castilla-La Mancha",
+        description: <>Computer Engineering (~70% completed).</>,
+      },
+    ],
+  },
+  certifications: {
+    display: true,
+    title: "Certifications",
+    groups: [
+      {
+        title: "COMPLETED",
+        items: [
+          <>Generative AI Fundamentals — Universidad de los Andes</>,
+          <>Intro to Data Analytics for Business — University of Colorado Boulder</>,
+          <>Data Visualization in Excel — Macquarie University</>,
+          <>Programming for Everybody (Python) — University of Michigan</>,
+          <>Python Data Structures — University of Michigan</>,
+        ],
+      },
+      {
+        title: "IN PROGRESS (2026)",
+        items: [
+          <>Microsoft Applied Skills — AB-900 (Configure administration for Microsoft 365 Copilot and Copilot agents)</>,
+          <>Generative AI: Unlocking Enterprise Value<br/>IE University Executive Education — Full Scholarship Awarded</>,
+          <>IE Staff Self-Leadership Program (Feb–Mar 2026)</>,
+        ],
+      },
+      {
+        title: "PLANNED (2026)",
+        items: [
+          <>Microsoft Power Platform Fundamentals (PL-900)</>,
+          <>Microsoft Power Platform Functional Consultant Associate (PL-200)</>,
+        ],
       },
     ],
   },
@@ -147,51 +180,40 @@ const about: About = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Microsoft Power Platform & Dynamics 365",
+        title: "Microsoft Copilot & AI",
         description: (
-          <>Power BI (DAX, Power Query), Power Automate (cloud/scheduled flows, approvals), Power Apps, Dataverse. Dynamics 365 pipeline and reporting configuration.</>
+          <>Copilot for Microsoft 365, Copilot Studio, AI Builder, prompt engineering, Responsible AI principles, AI governance</>
         ),
-        tags: [
-          { name: "Power Automate", icon: "dev" },
-          { name: "Power BI", icon: "dev" },
-          { name: "Dynamics 365", icon: "dev" },
-        ],
-        images: [],
       },
       {
-        title: "Generative AI & Copilot",
+        title: "Microsoft Power Platform",
         description: (
-          <>Copilot for Microsoft 365, Copilot Studio, AI Builder, prompt engineering, and responsible AI governance.</>
+          <>Power Automate (cloud flows, approvals, scheduled flows), Power BI (DAX, Power Query / M), Power Apps, Dataverse</>
         ),
-        tags: [
-          { name: "Microsoft Copilot", icon: "dev" },
-          { name: "Copilot Studio", icon: "dev" },
-          { name: "Prompt Engineering", icon: "dev" },
-        ],
-        images: [],
       },
       {
-        title: "Data, Analytics & Programming",
+        title: "Microsoft Dynamics 365",
         description: (
-          <>Excel (modeling, advanced formulas), KPI dashboarding, data validation, reporting automation. Introductory Python & SQL.</>
+          <>Case pipeline configuration, stage and ownership management, reporting, user enablement</>
         ),
-        tags: [
-          { name: "Excel", icon: "dev" },
-          { name: "Python", icon: "dev" },
-          { name: "SQL", icon: "dev" },
-        ],
-        images: [],
       },
       {
-        title: "Business Collaboration & Methodologies",
+        title: "Data & Analytics",
         description: (
-          <>Microsoft 365 (Teams, SharePoint). Expertise in requirements gathering, stakeholder management, business process improvement, and change management.</>
+          <>Excel (modeling, pivots, advanced formulas), KPI dashboarding, data validation, reporting automation</>
         ),
-        tags: [
-          { name: "Microsoft 365", icon: "dev" },
-          { name: "Process Improvement", icon: "dev" },
-        ],
-        images: [],
+      },
+      {
+        title: "Programming & Tooling",
+        description: (
+          <>Python, SQL, Microsoft 365 (Teams, SharePoint, Outlook)</>
+        ),
+      },
+      {
+        title: "Methodologies",
+        description: (
+          <>Requirements gathering, stakeholder management, business process improvement, change management</>
+        ),
       },
     ],
   },

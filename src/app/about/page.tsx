@@ -44,6 +44,15 @@ export default function About() {
       display: about.studies.display,
       items: about.studies.institutions.map((institution) => institution.name),
     },
+    ...(about.certifications?.display
+      ? [
+          {
+            title: about.certifications.title,
+            display: about.certifications.display,
+            items: about.certifications.groups.map((group) => group.title),
+          },
+        ]
+      : []),
     {
       title: about.technical.title,
       display: about.technical.display,
@@ -96,7 +105,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              Madrid, Spain
             </Row>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">
@@ -255,6 +264,30 @@ export default function About() {
                         ))}
                       </Row>
                     )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.certifications?.display && (
+            <>
+              <Heading as="h2" id={about.certifications.title} variant="display-strong-s" marginBottom="m">
+                {about.certifications.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.certifications.groups.map((group, index) => (
+                  <Column key={`${group.title}-${index}`} fillWidth gap="4">
+                    <Text id={group.title} variant="heading-strong-l" marginBottom="8">
+                      {group.title}
+                    </Text>
+                    <Column as="ul" gap="12" paddingLeft="24">
+                      {group.items.map((item, itemIndex) => (
+                        <Text as="li" variant="body-default-m" onBackground="neutral-weak" key={`${group.title}-${itemIndex}`}>
+                          {item}
+                        </Text>
+                      ))}
+                    </Column>
                   </Column>
                 ))}
               </Column>
