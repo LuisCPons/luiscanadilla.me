@@ -47,7 +47,7 @@ const home: Home = {
   description: `Portfolio website showcasing my work as an ${person.role}`,
   headline: <>Microsoft Copilot & Power Platform consulting.</>,
   featured: {
-    display: false,
+    display: true,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Featured Work</strong>{" "}
@@ -57,7 +57,7 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work/paddockplan",
+    href: "/work/ie-onboarding",
   },
   subline: (
     <>
