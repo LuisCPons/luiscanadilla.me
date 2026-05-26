@@ -62,6 +62,8 @@ const home: Home = {
   subline: (
     <>
       I design and ship Copilot Studio agents and Power Platform automations in production. Currently leading Copilot adoption at IE University across an 800+ case-per-year operations pipeline.
+      <br /><br />
+      <strong>Open to Microsoft Copilot / Power Platform consultant roles — Madrid, EU remote, or hybrid.</strong>
     </>
   ),
 };
@@ -92,6 +94,8 @@ const about: About = {
         Alongside the day job, I've been deliberately specialising in Microsoft AI — completing a Master in AI & Innovation at Founderz, earning a full scholarship to IE Executive Education's Generative AI: Unlocking Enterprise Value programme, and currently pursuing AB-900; PL-900 and PL-200 to follow in 2026.
         <br /><br />
         I'm looking for Microsoft Copilot or Power Platform consultant / solutions engineer roles where I can replicate the IE adoption playbook at scale.
+        <br /><br />
+        <strong>Engagement Model:</strong> I work in tight feedback loops — discover real user pain in week 1, ship a working prototype by week 2, measure adoption by week 4. I avoid building tools nobody asked for.
       </>
     ),
   },
