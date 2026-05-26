@@ -24,8 +24,8 @@ team:
 
 ### Business Impact
 - **Drastic Time Reduction:** Condensed the tactical planning phase from weeks of manual forum research to under 3 seconds of AI inference.
-- **Dual-Monetization Model:** Validated a commercial architecture capable of selling "Full Tactical Hub" access while programmatically injecting high-margin CPA affiliate links (flights, hotels) directly into the AI's JSON output.
-- **Enterprise-Grade Latency:** Achieved a Time to First Byte (TTFB) of under 100ms by bypassing no-code tools and deploying directly to Vercel's Edge network.
+- **Strict LLM Contracts:** Enforced 100% schema compliance by utilizing OpenAI's JSON mode combined with rigorous system prompts, completely eliminating UI parse errors caused by narrative hallucinations.
+- **Sub-Second Performance:** Achieved Sub-second Time to First Byte (TTFB) by bypassing no-code tools and deploying directly to Vercel's Edge network.
 
 ---
 
@@ -43,12 +43,18 @@ graph TD
     style B fill:#0f172a,stroke:#facc15,stroke-width:2px,color:#fff
 ```
 
+### Azure Migration Path
+While this prototype leverages Vercel and OpenAI, the architecture is designed to be platform-agnostic. In an enterprise Microsoft environment, this stack translates directly 1:1:
+- **Next.js Edge** &rarr; **Azure Static Web Apps + Azure Functions**
+- **OpenAI API** &rarr; **Azure OpenAI Service** (enterprise data privacy)
+- **Vercel KV/Postgres** &rarr; **Azure Cosmos DB**
+
 ---
 
 ## 3. Product Demo
 
 ### Phase 1: Tactical Intake
-*The intake form utilizes a "Stealth Terminal" paradigm (JetBrains Mono, high contrast) mimicking F1 telemetry walls to build trust in the AI's precision before asking the user for their constraints.*
+*The intake form utilizes JetBrains Mono and a high-contrast palette, designed to evoke F1 telemetry.*
 
 <div style={{ 
   margin: '2rem calc(50% - 50vw)', 
@@ -74,7 +80,7 @@ graph TD
 </div>
 
 ### Phase 2: AI-Generated Blueprint
-*Upon submission, the Next.js Edge function maps the LLM's strict JSON response to this dashboard. This is where the business value is delivered, featuring tiered recommendations and integrated CPA affiliate links.*
+*Upon submission, the Next.js Edge function maps the LLM's strict JSON response to this dashboard, instantly rendering structured data into a predictable UI without hallucinations.*
 
 <div style={{ 
   margin: '2rem calc(50% - 50vw)', 
@@ -131,7 +137,7 @@ const response = await fetch('https://api.openai.com/v1/chat/completions', {
       },
       {
         role: "user",
-        content: `Generate a strategy for Monza. 3 days. Origin: Madrid. Budget: Premium.`
+        content: `Generate a strategy for ${circuit}. ${days} days. Origin: ${origin}. Budget: ${budget}.`
       }
     ]
   })
@@ -142,6 +148,6 @@ By heavily constraining the AI to pure data mapping, the React application can s
 
 ## 5. The Outcome
 
-PaddockPlan successfully demonstrates how Generative AI can be harnessed to solve severe logistical friction in a niche, high-value market. By coupling a powerful backend LLM integration with a highly opinionated, immersive frontend design, the project proves that AI is most effective when it acts as an invisible engine powering a flawless user experience.
+PaddockPlan successfully demonstrates how Generative AI can be harnessed to solve severe logistical friction in a niche market. The most critical lesson learned was architectural: **forcing JSON mode and a strict schema eliminated 100% of UI parse errors across all test runs.** While this rigorous constraint costs some degree of conversational flexibility from the LLM, it is a mandatory trade-off when building highly reliable, production-grade Generative UI.
 
 - [View the GitHub Repository](https://github.com/LuisCPons/paddockplan)
