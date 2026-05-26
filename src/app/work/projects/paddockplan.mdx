@@ -9,46 +9,112 @@ team:
     linkedIn: "https://linkedin.com/in/luiscp1992"
 ---
 
-## The Logistical Friction
+## 1. Executive Summary
 
-The global resurgence of Formula 1 has attracted a massive, highly digital demographic. However, the ecosystem for planning attendance remains anchored in outdated methodologies. 
+<Row gap="16" wrap marginBottom="32">
+  <Column flex={1} background="brand-alpha-weak" border="brand-alpha-medium" radius="l" padding="24">
+    <Text variant="heading-strong-m" marginBottom="8">The Problem</Text>
+    <Text variant="body-default-m" onBackground="neutral-weak">Planning attendance to a Formula 1 Grand Prix involves severe information asymmetry. Circuits are remote, transport is strained, and dynamic pricing spikes aggressively, forcing fans to rely on fragmented, outdated forums.</Text>
+  </Column>
+  <Column flex={1} background="accent-alpha-weak" border="accent-alpha-medium" radius="l" padding="24">
+    <Text variant="heading-strong-m" marginBottom="8">The Solution</Text>
+    <Text variant="body-default-m" onBackground="neutral-weak">An intelligent "Stealth Terminal" built with Next.js and OpenAI GPT-4o. It ingests user constraints (budget, origin, duration) to generate a hyper-personalized, dynamically priced logistical Blueprint in real-time.</Text>
+  </Column>
+</Row>
 
-Planning a trip to a Grand Prix is not like booking a weekend city break. Circuits are notoriously remote (e.g., Silverstone is 100km from London, Monza is 40 mins from Milan), local transport is strained, and dynamic pricing algorithms spike aggressively during race weekends. Fans face severe information asymmetry, forced to rely on fragmented, outdated forums to construct their itineraries.
+### Business Impact
+- **Drastic Time Reduction:** Condensed the tactical planning phase from weeks of manual forum research to under 3 seconds of AI inference.
+- **Dual-Monetization Model:** Validated a commercial architecture capable of selling "Full Tactical Hub" access while programmatically injecting high-margin CPA affiliate links (flights, hotels) directly into the AI's JSON output.
+- **Enterprise-Grade Latency:** Achieved a Time to First Byte (TTFB) of <100ms by bypassing no-code tools and deploying directly to Vercel's Edge network.
 
-## The Solution: Tactical Intelligence
+---
 
-I developed **PaddockPlan** to bridge this gap. Rather than acting as a generic OTA (Online Travel Agency) or an overpriced specialized VIP agency, PaddockPlan operates as an intelligent, "Do-It-Yourself" tactical hub.
+## 2. The Architecture
 
-It leverages Generative AI (OpenAI GPT-4o) to ingest complex local topologies, transport systems, and user constraints (budget, origin city, duration, headcount) to generate a hyper-personalized logistical **Blueprint** in real time.
+To ensure enterprise-grade reliability, I built a custom API infrastructure. The core engine is a Next.js Route Handler that securely orchestrates the OpenAI API, completely protecting backend credentials from the client.
 
-## Design Identity: "Stealth Terminal"
+```mermaid
+graph TD
+    A[Client UI 'Tactical Intake'] -->|JSON Payload: Budget, City, Days| B(Next.js Route Handler)
+    B -->|Injected strict System Prompt| C{OpenAI GPT-4o API}
+    C -->|response_format: json_object| D[Structured Strategy Matrix]
+    D -->|Parsed & Mapped| E(React Generative UI)
+    style C fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#0f172a,stroke:#facc15,stroke-width:2px,color:#fff
+```
 
-An advanced AI solution packaged in a mediocre interface undermines trust in the model's intelligence. Therefore, PaddockPlan was designed with a strict **"Stealth Terminal"** paradigm.
+---
 
-Utilizing a high-contrast palette (Deep Black, Racing Red, Clean White) and monospace typography (JetBrains Mono), the interface evokes the telemetry walls used by F1 racing teams. This aesthetic immediately communicates precision, speed, and data density to the end user.
+## 3. Product Demo
 
-## Technical Architecture & Implementation
+*The interface utilizes a "Stealth Terminal" paradigm (JetBrains Mono, high contrast) mimicking F1 telemetry walls to build trust in the AI's precision.*
 
-To ensure enterprise-grade reliability and latency, I bypassed no-code tools entirely and built a custom infrastructure.
+<div style={{ 
+  margin: '2rem calc(50% - 50vw)', 
+  width: '100vw', 
+  display: 'flex', 
+  justifyContent: 'center',
+  padding: '0 1rem'
+}}>
+  <iframe 
+    src="https://paddockplan.vercel.app/" 
+    style={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      height: '85vh', 
+      minHeight: '600px', 
+      border: '1px solid rgba(255, 255, 255, 0.1)', 
+      borderRadius: '12px', 
+      background: '#000',
+      boxShadow: '0 8px 30px rgba(0,0,0,0.4)'
+    }}
+    title="PaddockPlan Live Deployment"
+  ></iframe>
+</div>
 
-### 1. Next.js Edge Infrastructure
-The platform is built on the bleeding edge of the web ecosystem using **Next.js 15, React 19, and Tailwind CSS v4**. Deployed directly to Vercel's Edge network, the application achieves a Time to First Byte (TTFB) of under 100ms.
+---
 
-### 2. Secure Backend AI Orchestration
-To protect API credentials and minimize client-side payload, the AI logic executes entirely on the server via Next.js Route Handlers. When a user submits their "Tactical Intake" form, the server securely injects the variables into an optimized prompt and performs a native HTTP fetch to the OpenAI API.
+## 4. Technical Deep Dive
 
-### 3. Strict JSON-Mode Inference
-The most significant technical challenge when building generative UI is preventing narrative text hallucinations from breaking the React frontend. 
-To solve this, I enforced strict `System Prompts` and activated OpenAI's `response_format: { type: "json_object" }`. The LLM is forced to return an exact, predictable JSON schema (the "Strategy Matrix"), which the React application dynamically maps into budget tiers, transit recommendations, and interactive widgets.
+### Strict JSON-Mode Inference
 
-## Outcome & Commercial Viability
+The most significant technical challenge when building Generative UI is preventing narrative text "hallucinations" from breaking the React frontend components. 
 
-Through rigorous prompt engineering, PaddockPlan achieves highly accurate logistical inference in an average of **2.5 seconds**. 
+If the LLM returns conversational text (e.g., *"Here is your itinerary..."*) instead of pure data, the frontend parser will crash. To solve this, I enforced strict prompt engineering alongside OpenAI's JSON mode capability. 
 
-From a business perspective, the platform lays the groundwork for a highly scalable, dual-monetization model:
-1. **Tiered Access:** Selling access to the "Full Tactical Hub" premium insights.
-2. **CPA Affiliation:** By dynamically generating JSON blueprints that recommend specific airports (e.g., Bergamo BGY) or hotel zones, PaddockPlan can programmatically inject deep affiliate links for flights and accommodations, generating high-margin commission revenue.
+Here is an excerpt of the inference logic:
 
-## Links
-- [Live Deployment](https://paddockplan.vercel.app/)
-- [GitHub Repository](https://github.com/LuisCPons/paddockplan)
+```typescript
+// Route Handler orchestration forcing JSON output
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    model: "gpt-4o",
+    response_format: { type: "json_object" }, // CRITICAL: Forces schema compliance
+    messages: [
+      {
+        role: "system",
+        content: `You are PaddockPlan's tactical AI. Return ONLY a valid JSON object matching this schema: 
+        { "budgetTier": number, "recommendedAirport": string, "hotelZone": string, "alerts": string[] }. 
+        No markdown, no narrative text.`
+      },
+      {
+        role: "user",
+        content: `Generate a strategy for Monza. 3 days. Origin: Madrid. Budget: Premium.`
+      }
+    ]
+  })
+});
+```
+
+By heavily constraining the AI to pure data mapping, the React application can safely destructure the payload and dynamically render the budget tiers and transit recommendations without fear of UI breakage.
+
+## 5. The Outcome
+
+PaddockPlan successfully demonstrates how Generative AI can be harnessed to solve severe logistical friction in a niche, high-value market. By coupling a powerful backend LLM integration with a highly opinionated, immersive frontend design, the project proves that AI is most effective when it acts as an invisible engine powering a flawless user experience.
+
+- [View the GitHub Repository](https://github.com/LuisCPons/paddockplan)
