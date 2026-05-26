@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Luis",
   lastName: "Cañadilla",
   name: "Luis Cañadilla",
-  role: "Microsoft Copilot & Power Platform Consultant",
+  role: "Power Platform & Microsoft Copilot Specialist",
   avatar: "/images/avatar.jpg",
   email: "luiscanadillapons@gmail.com", // Adjust later if needed
   location: "Europe/Madrid", 
@@ -44,8 +44,8 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as an ${person.role}`,
-  headline: <>Microsoft Copilot & Power Platform consulting.</>,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  headline: <>Power Platform & Microsoft Copilot specialist · IE University</>,
   featured: {
     display: true,
     title: (
