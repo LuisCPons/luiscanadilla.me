@@ -89,9 +89,9 @@ const about: About = {
       <>
         I started working at IE University in 2023 as an Immigration and Relocation Specialist for foreign students, but have since shifted toward more AI-oriented roles within my department. Today, as an Operations & Data Specialist, I own a Dynamics 365 case pipeline of 800+ requests per year and lead the team's internal AI adoption as IE's AI Champion. In this capacity, I've shipped a Copilot Studio agent to production and built Power Automate flows that handle SLA monitoring, KPI digests, and recurring coordination work.
         <br /><br />
-        Alongside the day job, I've been deliberately specialising in Microsoft AI — completing a Master in AI & Innovation at Founderz, earning a full scholarship to IE Executive Education's Generative AI: Unlocking Enterprise Value programme, and tracking Microsoft's Copilot and Power Platform certifications (AB-900, PL-900, PL-200).
+        Alongside the day job, I've been deliberately specialising in Microsoft AI — completing a Master in AI & Innovation at Founderz, earning a full scholarship to IE Executive Education's Generative AI: Unlocking Enterprise Value programme, and currently pursuing AB-900; PL-900 and PL-200 to follow in 2026.
         <br /><br />
-        My focus going forward is Microsoft Copilot and Power Platform consulting — helping organisations adopt these tools the way IE did: responsibly, with real users, and with measurable outcomes.
+        I'm looking for Microsoft Copilot or Power Platform consultant / solutions engineer roles where I can replicate the IE adoption playbook at scale.
       </>
     ),
   },
@@ -105,13 +105,13 @@ const about: About = {
         role: "Operations & Data Specialist — Student Services",
         achievements: [
           <>
-            <strong>Process Optimization:</strong> Owned a Microsoft Dynamics 365 case pipeline of 800+ annual requests. Built Power Automate cloud flows for SLA-threshold alerts, KPI digests, and recurring tasks, reducing manual follow-up and strengthening process control.
+            <strong>Process Optimization:</strong> Owned a Microsoft Dynamics 365 case pipeline of 800+ annual requests. Built Power Automate cloud flows for SLA-threshold alerts, KPI digests, and recurring tasks, reducing manual follow-up and achieving a ~20% reduction in SLA breach rate.
           </>,
           <>
-            <strong>Data & Reporting:</strong> Developed Power BI dashboards (DAX, Power Query) to track operational KPIs, response times, and service quality, providing leadership with real-time visibility. Standardized internal documentation and executed data quality checks.
+            <strong>Data & Reporting:</strong> Developed Power BI dashboards (DAX, Power Query) viewed weekly by the leadership team to track operational KPIs, response times, and service quality. Standardized internal documentation and executed data quality checks.
           </>,
           <>
-            <strong>AI Adoption:</strong> Acted as Internal AI Champion. Defined and rolled out Microsoft Copilot and ChatGPT adoption patterns (templates, summaries, data QA) and delivered hands-on enablement sessions to the team.
+            <strong>AI Adoption:</strong> Acted as Internal AI Champion. Defined and rolled out Microsoft Copilot and ChatGPT adoption patterns (templates, summaries, data QA) and delivered hands-on enablement sessions to ~40 advisors.
           </>,
         ],
         images: [],
@@ -123,12 +123,12 @@ const about: About = {
     title: "Education",
     institutions: [
       {
-        name: "Founderz",
-        description: <>Master in AI & Innovation (online, 2026).</>,
-      },
-      {
         name: "IE University Executive Education",
         description: <>Generative AI: Unlocking Enterprise Value.<br/>In progress 2026 — Full Scholarship Awarded.</>,
+      },
+      {
+        name: "Founderz",
+        description: <>Master in AI & Innovation (online, 2026).</>,
       },
       {
         name: "Universidad Complutense de Madrid & Universidad de Alcalá",
@@ -140,7 +140,7 @@ const about: About = {
       },
       {
         name: "Universidad Politécnica de Madrid & Universidad de Castilla-La Mancha",
-        description: <>Computer Engineering (~70% completed).</>,
+        description: <>Computer Engineering — coursework in algorithms, data structures, OOP; transitioned to humanities.</>,
       },
     ],
   },
@@ -160,17 +160,10 @@ const about: About = {
         ],
       },
       {
-        title: "IN PROGRESS (2026)",
+        title: "CURRENTLY PURSUING (2026)",
         items: [
           <>Microsoft Applied Skills — AB-900 (Configure administration for Microsoft 365 Copilot and Copilot agents)</>,
           <>Generative AI: Unlocking Enterprise Value<br/>IE University Executive Education — Full Scholarship Awarded</>,
-        ],
-      },
-      {
-        title: "PLANNED (2026)",
-        items: [
-          <>Microsoft Power Platform Fundamentals (PL-900)</>,
-          <>Microsoft Power Platform Functional Consultant Associate (PL-200)</>,
         ],
       },
     ],
@@ -182,7 +175,7 @@ const about: About = {
       {
         title: "Microsoft Copilot & AI",
         description: (
-          <>Copilot for Microsoft 365, Copilot Studio, AI Builder, prompt engineering, Responsible AI principles, AI governance</>
+          <>Copilot for Microsoft 365, Copilot Studio, AI Builder, prompt engineering</>
         ),
       },
       {
@@ -206,7 +199,7 @@ const about: About = {
       {
         title: "Programming & Tooling",
         description: (
-          <>Python, SQL, Microsoft 365 (Teams, SharePoint, Outlook)</>
+          <>Python (introductory), SQL (introductory), Microsoft 365 (Teams, SharePoint, Outlook)</>
         ),
       },
       {
