@@ -11,21 +11,43 @@ team:
     linkedIn: "https://linkedin.com/in/luiscp1992"
 ---
 
-## The Challenge
+## 1. Executive Summary
 
-When two interns and a new employee joined our department simultaneously, we faced a major operational bottleneck. The standard onboarding process involved walking new hires through dense PDF guides explaining every single departmental process. This approach is not only incredibly time-consuming for senior staff but also overwhelming for new joiners. It is nearly impossible to digest such a massive volume of information in one or two sessions without feeling completely daunted.
+<Row gap="16" wrap marginBottom="32">
+  <Column flex={1} background="brand-alpha-weak" border="brand-alpha-medium" radius="l" padding="24">
+    <Text variant="heading-strong-m" marginBottom="8">The Problem</Text>
+    <Text variant="body-default-m" onBackground="neutral-weak">Standard onboarding involved dense PDF guides for complex Dynamics 365 processes, overwhelming new hires and consuming hours of senior staff time for 1-on-1 teaching.</Text>
+  </Column>
+  <Column flex={1} background="accent-alpha-weak" border="accent-alpha-medium" radius="l" padding="24">
+    <Text variant="heading-strong-m" marginBottom="8">The Solution</Text>
+    <Text variant="body-default-m" onBackground="neutral-weak">A gamified, interactive web app powered by Microsoft 365 Copilot Cowork, leveraging our internal Dynamics 365 knowledge bases to create self-paced roleplay simulators.</Text>
+  </Column>
+</Row>
 
-We needed a way to accelerate the learning curve and standardize the knowledge transfer, without sacrificing hours of 1-on-1 daily teaching. 
+### Business Impact
+- **Reclaimed Senior Staff Time:** Reduced 1-on-1 daily training from 1.5 hours to just 30 minutes, saving roughly 20 hours per month per new hire.
+- **Accelerated Time-to-Value:** Shortened the standard 1-month onboarding cycle, allowing new hires to operate independently much faster.
+- **Self-Serve Knowledge:** The app acts as an interactive reference guide that advisors actively use while on calls with students, reducing interruptions.
 
-## The AI-Driven Solution
+---
 
-As an **AI Champion at IE**, I was selected to test early access to **Microsoft 365 Copilot Cowork** licenses. I saw an immediate opportunity to leverage generative AI to solve our onboarding crisis. 
+## 2. The Build Process
 
-I utilized Copilot Cowork, feeding it our extensive internal knowledge bases and complex process documentation housed within our **Dynamics 365 CRM**. By tapping into the AI's ability to synthesize and structure vast amounts of data, I was able to rapidly design and develop a comprehensive **Gamified Onboarding Application**.
+Rather than building a standard chatbot that queries a database at runtime, I used generative AI to synthesize our complex Dynamics 365 process documentation into a self-contained, standalone web application. Here is the workflow used to generate the simulator:
 
-Built as a standalone interactive web app, it transformed our dry procedural guides into a self-paced, interactive game environment. It includes roleplay simulators, interactive modules, and progress trackers that allow new members to safely explore our systems and policies.
+```mermaid
+graph TD
+    A[(Dynamics 365 Knowledge Base)] -->|Exported PDFs & Policies| B(Context Preparation)
+    B -->|Massive structured prompt| C{AI Code Generation}
+    C -->|Synthesizes knowledge & logic| D[Standalone HTML/JS App]
+    D -->|Deployed internally| E(Gamified Simulator)
+    style C fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style A fill:#0f172a,stroke:#facc15,stroke-width:2px,color:#fff
+```
 
-### Try the Simulator
+---
+
+## 3. Product Demo: The Simulator
 
 *Experience the interactive gamified onboarding process below:*
 
@@ -52,12 +74,41 @@ Built as a standalone interactive web app, it transformed our dry procedural gui
   ></iframe>
 </div>
 
-## The Impact
+---
 
-I finalized and tested the app with my colleagues just before our new team members arrived. Once they joined, the reception was outstanding. Instead of feeling overwhelmed, the new hires found the onboarding process refreshing and, in their own words, *"addictive to play"*. 
+## 4. Technical Deep Dive
 
-More importantly from a business perspective, the application:
-1. **Accelerated Time-to-Value:** New hires learned our complex Dynamics 365 CRM workflows independently and at their own pace.
-2. **Reclaimed Hundreds of Hours:** It completely freed job specialists from daily, repetitive 1-on-1 teaching, allowing us to pivot our focus to high-value, strategic tasks.
+### Prompt Engineering for App Generation
 
-Of course, this technology doesn't replace the human touch—we still actively address complex doubts and mentor our new members. At our core, we take care of our people. But by intelligently applying AI and gamification, we modernized our operations and proved the tangible ROI of AI adoption in the workplace.
+The core technical challenge was not runtime AI hallucinations, but rather structuring an incredibly dense prompt that forced the AI to generate a functional, gamified Single Page Application (SPA) in one shot. 
+
+I designed a rigorous system prompt that dictated strict technical constraints, state management, UI design tokens, and exact information architecture derived from our CRM.
+
+Here is an excerpt of the system prompt used to orchestrate the build:
+
+```markdown
+# Project: IE Student Services Onboarding Companion
+
+## Role and goal
+You are a senior frontend engineer with strong design sensibility. Build a **single-page web app** that serves as an onboarding companion for new advisors joining the Immigration & Relocation team...
+
+## Technical constraints (non-negotiable)
+- One self-contained `.html` file. No build step, no frameworks, no external dependencies.
+- Vanilla HTML + CSS + JavaScript only.
+- Persistence via `localStorage` under the key `ie-onboarding-v1`. Migrate any legacy state shapes.
+- Hash-based routing: `#home`, `#tasks`, `#progress`, `#roleplay`, `#guide/{id}`...
+
+## Information architecture
+Five visible categories on the tasks dashboard, plus a resources bucket. Each guide has `{ id, title, icon, category, subtasks[] }`. Only subtask checkboxes count towards progress.
+
+1. **Essentials for arrival** 🎯 — health insurance, public transport...
+2. **Housing** 🏠 — long-term accommodation and temporary accommodation...
+3. **Immigration & paperwork: Non-European students** 🛂 — padrón, fingerprinting, NIE card...
+...
+```
+
+By heavily constraining the AI—forcing vanilla JS, local storage for persistence, and hardcoding the institutional design system—I ensured the output was a predictable, highly performant tool that required zero server maintenance.
+
+## 5. The Outcome
+
+By intelligently applying AI and gamification, we modernized our operations and proved the tangible ROI of AI adoption in the workplace. Instead of feeling overwhelmed, new hires found the onboarding process refreshing and self-driven, allowing our job specialists to pivot their focus back to high-value, strategic tasks while maintaining a high standard of care for our people.
