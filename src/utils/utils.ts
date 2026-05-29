@@ -49,6 +49,8 @@ function readMDXFile(filePath: string) {
     image: data.image || "",
     images: data.images || [],
     tag: data.tag || [],
+    tags: data.tags || [],
+    metric: data.metric || "",
     team: data.team || [],
     link: data.link || "",
   };
