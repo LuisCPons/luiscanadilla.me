@@ -19,6 +19,8 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  tags?: string[];
+  metric?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,6 +31,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  tags = [],
+  metric,
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -83,14 +87,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <Flex s={{ direction: "column" }} fillWidth gap="l">
           {title && (
-            <Flex flex={5}>
+            <Column flex={5} gap="16">
               <Heading as="h2" wrap="balance" variant="heading-strong-l">
                 {title}
               </Heading>
-            </Flex>
+              {tags && tags.length > 0 && (
+                <Flex gap="8" wrap>
+                  {tags.map((tag) => (
+                    <div key={tag} style={{
+                      padding: '4px 10px',
+                      borderRadius: '100px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      fontSize: '0.75rem',
+                      color: 'rgba(255, 255, 255, 0.7)',
+                    }}>
+                      {tag}
+                    </div>
+                  ))}
+                </Flex>
+              )}
+            </Column>
           )}
-          {(description?.trim() || content?.trim()) && (
+          {(description?.trim() || content?.trim() || metric) && (
             <Column flex={7} gap="16">
+              {metric && (
+                <Text variant="body-strong-m" onBackground="brand-strong">
+                  {metric}
+                </Text>
+              )}
               {description?.trim() && (
                 <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
                   {description}
