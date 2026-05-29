@@ -7,7 +7,7 @@ const person: Person = {
   name: "Luis Cañadilla",
   role: "Power Platform & Microsoft Copilot Specialist",
   avatar: "/images/avatar.jpg",
-  email: "luiscanadillapons@gmail.com", // Adjust later if needed
+  email: "luiscanadillapons@gmail.com",
   location: "Europe/Madrid", 
   languages: ["Spanish — Native", "Catalan — Bilingual", "English — C2", "Italian — B1"], 
 };
