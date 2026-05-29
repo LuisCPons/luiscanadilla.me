@@ -91,7 +91,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Operations & Data Specialist at IE University, where I own a Dynamics 365 case pipeline of 800+ annual requests and lead internal AI adoption as the department's AI Champion. I've shipped a Copilot Studio agent to production, built Power Automate flows for SLA monitoring and KPI digests, and enabled ~40 advisors on Microsoft Copilot and ChatGPT patterns. Currently completing a Master in AI & Innovation (Founderz) and IE Executive Education's Generative AI programme (full scholarship).
+        Operations & Data Specialist at IE University, where I lead internal AI adoption as the department's AI Champion. I've shipped a Copilot Studio agent to production, built Power Automate flows for SLA monitoring and KPI digests, and enabled ~40 advisors on Microsoft Copilot and ChatGPT patterns. Completed a Master in AI & Innovation (Founderz, 2026) and currently finishing IE Executive Education's Generative AI programme (full scholarship).
         <br /><br />
         <strong>Engagement Model:</strong> I work in tight feedback loops — discover real user pain in week 1, ship a working prototype by week 2, measure adoption by week 4. I avoid building tools nobody asked for.
       </>
