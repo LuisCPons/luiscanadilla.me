@@ -64,6 +64,8 @@ const home: Home = {
       I design and ship Copilot Studio agents and Power Platform automations in production. Currently leading Copilot adoption at IE University across an 800+ case-per-year operations pipeline.
       <br /><br />
       <strong>Open to Microsoft Copilot / Power Platform consultant roles — Madrid, EU remote, or hybrid.</strong>
+      <br /><br />
+      <a href="https://linkedin.com/in/luiscp1992" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.4rem', borderRadius: '8px', background: 'rgba(56, 189, 248, 0.12)', border: '1px solid rgba(56, 189, 248, 0.3)', color: '#38bdf8', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', transition: 'all 0.2s ease' }}>Let's connect on LinkedIn →</a>
     </>
   ),
 };
@@ -89,11 +91,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I started working at IE University in 2023 as an Immigration and Relocation Specialist for foreign students, but have since shifted toward more AI-oriented roles within my department. Today, as an Operations & Data Specialist, I own a Dynamics 365 case pipeline of 800+ requests per year and lead the team's internal AI adoption as IE's AI Champion. In this capacity, I've shipped a Copilot Studio agent to production and built Power Automate flows that handle SLA monitoring, KPI digests, and recurring coordination work.
-        <br /><br />
-        Alongside the day job, I've been deliberately specialising in Microsoft AI — completing a Master in AI & Innovation at Founderz, earning a full scholarship to IE Executive Education's Generative AI: Unlocking Enterprise Value programme, and currently pursuing AB-900; PL-900 and PL-200 to follow in 2026.
-        <br /><br />
-        I'm looking for Microsoft Copilot or Power Platform consultant / solutions engineer roles where I can replicate the IE adoption playbook at scale.
+        Operations & Data Specialist at IE University, where I own a Dynamics 365 case pipeline of 800+ annual requests and lead internal AI adoption as the department's AI Champion. I've shipped a Copilot Studio agent to production, built Power Automate flows for SLA monitoring and KPI digests, and enabled ~40 advisors on Microsoft Copilot and ChatGPT patterns. Currently completing a Master in AI & Innovation (Founderz) and IE Executive Education's Generative AI programme (full scholarship).
         <br /><br />
         <strong>Engagement Model:</strong> I work in tight feedback loops — discover real user pain in week 1, ship a working prototype by week 2, measure adoption by week 4. I avoid building tools nobody asked for.
       </>
@@ -156,10 +154,6 @@ const about: About = {
         title: "COMPLETED",
         items: [
           <>Generative AI Fundamentals — Universidad de los Andes</>,
-          <>Intro to Data Analytics for Business — University of Colorado Boulder</>,
-          <>Data Visualization in Excel — Macquarie University</>,
-          <>Programming for Everybody (Python) — University of Michigan</>,
-          <>Python Data Structures — University of Michigan</>,
           <>IE Staff Self-Leadership Program (Feb–Mar 2026)</>,
         ],
       },
@@ -167,52 +161,17 @@ const about: About = {
         title: "CURRENTLY PURSUING (2026)",
         items: [
           <>Microsoft Applied Skills — AB-900 (Configure administration for Microsoft 365 Copilot and Copilot agents)</>,
+          <>Microsoft Certified — AB-620: AI Agent Builder Associate</>,
+          <>Microsoft Certified — AB-410: Intelligent Applications Builder Associate</>,
           <>Generative AI: Unlocking Enterprise Value<br/>IE University Executive Education — Full Scholarship Awarded</>,
         ],
       },
     ],
   },
   technical: {
-    display: true, 
+    display: false, 
     title: "Technical Skills",
-    skills: [
-      {
-        title: "Microsoft Copilot & AI",
-        description: (
-          <>Copilot for Microsoft 365, Copilot Studio, AI Builder, prompt engineering</>
-        ),
-      },
-      {
-        title: "Microsoft Power Platform",
-        description: (
-          <>Power Automate (cloud flows, approvals, scheduled flows), Power BI (DAX, Power Query / M), Power Apps, Dataverse</>
-        ),
-      },
-      {
-        title: "Microsoft Dynamics 365",
-        description: (
-          <>Case pipeline configuration, stage and ownership management, reporting, user enablement</>
-        ),
-      },
-      {
-        title: "Data & Analytics",
-        description: (
-          <>Excel (modeling, pivots, advanced formulas), KPI dashboarding, data validation, reporting automation</>
-        ),
-      },
-      {
-        title: "Programming & Tooling",
-        description: (
-          <>Python (introductory), SQL (introductory), Microsoft 365 (Teams, SharePoint, Outlook)</>
-        ),
-      },
-      {
-        title: "Methodologies",
-        description: (
-          <>Requirements gathering, stakeholder management, business process improvement, change management</>
-        ),
-      },
-    ],
+    skills: [],
   },
 };
 
