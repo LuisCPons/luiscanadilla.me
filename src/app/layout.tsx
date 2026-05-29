@@ -32,8 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: "https://luiscanadilla.me/og-image.png",
-          width: 2400,
-          height: 1254,
+          width: 1736,
+          height: 906,
           type: "image/png",
         },
       ],
