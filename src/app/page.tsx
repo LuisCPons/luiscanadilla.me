@@ -20,14 +20,33 @@ import { HeroSection } from "@/components/HeroSection";
 import { ImpactStrip } from "@/components/ImpactStrip";
 import { ViewAllProjectsLink } from "@/components/ViewAllProjectsLink";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: home.title,
-    description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Luis Cañadilla — Power Platform & Microsoft Copilot Specialist",
+    description:
+      "AI solutions implemented — architecture diagrams, business impact metrics, and technical deep dives.",
+    openGraph: {
+      title: "Luis Cañadilla — Power Platform & Microsoft Copilot Specialist",
+      description:
+        "AI solutions implemented — architecture diagrams, business impact metrics, and technical deep dives.",
+      url: "https://luiscanadilla.me",
+      type: "website",
+      images: [
+        {
+          url: "https://luiscanadilla.me/og-image.png",
+          width: 1736,
+          height: 906,
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["https://luiscanadilla.me/og-image.png"],
+    },
+  };
 }
 
 export default function Home() {
