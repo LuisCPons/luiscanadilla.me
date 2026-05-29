@@ -1,91 +1,53 @@
-# Magic Portfolio
+# Luis Cañadilla — Portfolio Website
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+Welcome to the repository for my personal portfolio website, where I showcase my work as an Operations & Data Specialist, AI Champion, and Power Platform & Microsoft Copilot Specialist.
 
-View the demo [here](https://demo.magic-portfolio.com).
+**[🌐 Visit the live site: luiscanadilla.me](https://luiscanadilla.me)**
 
-![Magic Portfolio](public/images/og/home.jpg)
+## Overview
 
-## Getting started
+This portfolio serves as a central hub for my professional identity, detailing:
+- **Case Studies**: In-depth looks at AI solutions I've implemented, including architecture diagrams, business impact metrics, and technical deep dives.
+- **Projects**: Power Automate flows, Copilot Studio agents, and data integration solutions.
+- **About Me**: My background, education, certifications, and approach to leading AI adoption.
+- **Bilingual Support**: Full English/Spanish localization to reach a broader audience.
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+## Tech Stack
 
-**2. Install dependencies**
-```
-npm install
-```
+This website is built with modern web technologies focusing on performance, accessibility, and a premium design aesthetic:
 
-**3. Run dev server**
-```
-npm run dev
-```
+- **Framework**: [Next.js 16](https://nextjs.org/) with App Router and Turbopack
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling & UI**: [Once UI](https://once-ui.com/) Design System and pure CSS for custom responsive layouts
+- **Localization**: Custom i18n implementation
+- **Deployment**: [Vercel](https://vercel.com)
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
-```
+## Local Development
 
-**5. Edit content**
-```
-src/resources/content.js
-```
+To run this project locally:
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/LuisCPons/luiscanadilla.me.git
+   cd luiscanadilla.me
+   ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Documentation
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+4. **Open in browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Features
+## Contact
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/luis-canadilla/) or check out my other repositories on [GitHub](https://github.com/LuisCPons).
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
-
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
-
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
-
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
-
-## Creators
-
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
-
-## Get involved
-
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
-
-## License
-
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-## Deploy with Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+---
+*Built with Next.js and Once UI.*
