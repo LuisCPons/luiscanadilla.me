@@ -22,35 +22,46 @@ export function ImpactStrip() {
   const m = metrics[lang];
 
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '2rem',
-      width: '100%',
-      maxWidth: '900px',
-      margin: '0 auto',
-      padding: '0 1rem',
-    }}>
-      {m.map((item) => (
-        <div key={item.label} style={{ textAlign: 'center' }}>
-          <div style={{
-            fontSize: '2rem',
-            fontWeight: 800,
-            color: '#38bdf8',
-            lineHeight: 1.2,
-          }}>
-            {item.number}
+    <>
+      <style>{`
+        .impact-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          width: 100%;
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+        @media (max-width: 640px) {
+          .impact-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+          }
+        }
+      `}</style>
+      <div className="impact-grid">
+        {m.map((item) => (
+          <div key={item.label} style={{ textAlign: 'center' }}>
+            <div style={{
+              fontSize: '2rem',
+              fontWeight: 800,
+              color: '#38bdf8',
+              lineHeight: 1.2,
+            }}>
+              {item.number}
+            </div>
+            <div style={{
+              fontSize: '0.8rem',
+              color: 'rgba(128, 128, 128, 0.85)',
+              marginTop: '0.35rem',
+              lineHeight: 1.4,
+            }}>
+              {item.label}
+            </div>
           </div>
-          <div style={{
-            fontSize: '0.8rem',
-            color: 'rgba(128, 128, 128, 0.85)',
-            marginTop: '0.35rem',
-            lineHeight: 1.4,
-          }}>
-            {item.label}
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
