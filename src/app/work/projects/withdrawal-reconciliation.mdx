@@ -50,18 +50,33 @@ graph TD
 
 ## 3. Walkthrough
 
-*This workflow handles confidential student data subject to Spanish data protection law (LOPDGDD / GDPR), so the demo below uses redacted synthetic cases that mirror the production schema. Live screenshots available on request under NDA.*
+*This workflow handles confidential student data subject to Spanish data protection law (LOPDGDD / GDPR), so the screenshot below uses randomized names that mirror the production schema. Live data available on request under NDA.*
 
-<Row gap="16" wrap marginBottom="32">
-  <Column flex={1} background="neutral-alpha-weak" border="neutral-alpha-medium" radius="l" padding="24">
-    <Text variant="heading-strong-s" marginBottom="8">Weekly Excel Output</Text>
-    <Text variant="body-default-s" onBackground="neutral-weak">Per-case row with reconciliation status, legal pathway, action required by office, action required by student, and a deep-link back to the Dynamics 365 record for one-click review.</Text>
-  </Column>
-  <Column flex={1} background="neutral-alpha-weak" border="neutral-alpha-medium" radius="l" padding="24">
-    <Text variant="heading-strong-s" marginBottom="8">Supervisor Briefing Email</Text>
-    <Text variant="body-default-s" onBackground="neutral-weak">Sent only after manual approval. Lists each case with the exact procedural steps required for both internal action and external communication to the Oficina de Extranjería.</Text>
-  </Column>
-</Row>
+<div style={{ 
+  margin: '2rem calc(50% - 50vw)', 
+  width: '100vw', 
+  display: 'flex', 
+  justifyContent: 'center',
+  padding: '0 1rem'
+}}>
+  <img 
+    src="/images/ExcelWithdrawals.png" 
+    alt="Weekly reconciliation Excel output showing per-case legal pathway classification, office and student actions, and CRM deep-links"
+    style={{ 
+      width: '100%', 
+      maxWidth: '1200px', 
+      border: '1px solid rgba(255, 255, 255, 0.1)', 
+      borderRadius: '12px', 
+      boxShadow: '0 8px 30px rgba(0,0,0,0.4)'
+    }}
+  />
+</div>
+
+Each row is a single withdrawal case. The columns map directly to the agent's AI pipeline:
+- **Reconciliation** — did the case appear in CRM, email, or both?
+- **Legal Pathway** — which of the four regulatory branches applies?
+- **Office Action / Student Action** — the exact next steps for each party.
+- **⚠ REVIEW** — flagged cases the agent could not classify confidently, surfaced at the top for human judgment.
 
 ---
 
@@ -101,3 +116,5 @@ The interesting result here is not that the agent catches mistakes the manual pr
 It also produces something the manual process never did: an auditable, week-over-week record of every withdrawal handled, with reconciliation status, classification, and action taken. For a process with legal consequences, the audit trail is not a side effect — it is the second deliverable.
 
 The pattern generalises beyond this use case. Any high-stakes workflow that involves reconciling structured CRM records against unstructured inbox traffic, classifying by domain-specific rules, and routing through human approval before an external action — admissions appeals, complaint handling, regulatory disclosures, refund authorisations — is a candidate for the same agent shape.
+
+Built with [Microsoft Copilot Cowork](https://adoption.microsoft.com/en-us/copilot/agents/). Source code and production artifacts are internal to IE University and not publicly available.
