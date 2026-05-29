@@ -17,6 +17,8 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { HeroSection } from "@/components/HeroSection";
+import { ImpactStrip } from "@/components/ImpactStrip";
+import { ViewAllProjectsLink } from "@/components/ViewAllProjectsLink";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -27,13 +29,6 @@ export async function generateMetadata() {
     image: home.image,
   });
 }
-
-const impactMetrics = [
-  { number: "834", label: "visa document sets automated in one intake" },
-  { number: "~90%", label: "reduction in weekly reconciliation time" },
-  { number: "6", label: "team members using production agents daily" },
-  { number: "~60%", label: "faster document generation per visa set" },
-];
 
 export default function Home() {
   return (
@@ -56,50 +51,13 @@ export default function Home() {
       </Column>
 
       {/* Impact Numbers Strip */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '2rem',
-        width: '100%',
-        maxWidth: '900px',
-        margin: '0 auto',
-        padding: '0 1rem',
-      }}>
-        {impactMetrics.map((m) => (
-          <div key={m.label} style={{ textAlign: 'center' }}>
-            <div style={{
-              fontSize: '2rem',
-              fontWeight: 800,
-              color: '#38bdf8',
-              lineHeight: 1.2,
-            }}>
-              {m.number}
-            </div>
-            <div style={{
-              fontSize: '0.8rem',
-              color: 'rgba(128, 128, 128, 0.85)',
-              marginTop: '0.35rem',
-              lineHeight: 1.4,
-            }}>
-              {m.label}
-            </div>
-          </div>
-        ))}
-      </div>
+      <ImpactStrip />
 
       {/* Top 2 Project Cards */}
       <Projects range={[1, 2]} />
 
       {/* View all projects link */}
-      <Flex fillWidth horizontal="center" paddingY="8">
-        <SmartLink
-          suffixIcon="arrowRight"
-          style={{ margin: "0", width: "fit-content" }}
-          href="/work"
-        >
-          <Text variant="body-default-s">View all projects</Text>
-        </SmartLink>
-      </Flex>
+      <ViewAllProjectsLink />
 
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">

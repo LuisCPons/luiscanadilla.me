@@ -8,7 +8,13 @@ import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import { LangToggle } from "./LangToggle";
+import { useLang } from "./LangContext";
 import styles from "./Header.module.scss";
+
+const navLabels = {
+  en: { about: "About", work: "Projects", blog: "Blog", gallery: "Gallery" },
+  es: { about: "Sobre mí", work: "Proyectos", blog: "Blog", gallery: "Galería" },
+};
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -45,6 +51,8 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const { lang } = useLang();
+  const t = navLabels[lang];
 
   return (
     <>
@@ -97,7 +105,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
-                      label={about.label}
+                      label={t.about}
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -116,7 +124,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="grid"
                       href="/work"
-                      label={work.label}
+                      label={t.work}
                       selected={pathname.startsWith("/work")}
                     />
                   </Row>
@@ -135,7 +143,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="book"
                       href="/blog"
-                      label={blog.label}
+                      label={t.blog}
                       selected={pathname.startsWith("/blog")}
                     />
                   </Row>
@@ -154,7 +162,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="gallery"
                       href="/gallery"
-                      label={gallery.label}
+                      label={t.gallery}
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>

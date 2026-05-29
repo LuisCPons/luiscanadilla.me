@@ -9,6 +9,12 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { useLang } from "./LangContext";
+
+const labels = {
+  en: { readCase: "Read case study", liveDemo: "Live demo" },
+  es: { readCase: "Leer caso de estudio", liveDemo: "Demo en vivo" },
+};
 
 interface ProjectCardProps {
   href: string;
@@ -34,6 +40,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   tags = [],
   metric,
 }) => {
+  const { lang } = useLang();
+  const t = labels[lang];
   return (
     <Column fillWidth gap="m">
       {images && images.length > 0 && (
@@ -93,42 +101,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </Heading>
               {tags && tags.length > 0 && (
                 <Flex gap="8" wrap>
-                  {tags.map((tag) => {
-                    const colorMap: Record<string, { bg: string; border: string }> = {
-                      'Copilot Cowork':    { bg: '#7B5EA7', border: '#6A4F91' },
-                      'Copilot Studio':    { bg: '#0E8A7E', border: '#0A7068' },
-                      'Dynamics 365':      { bg: '#002050', border: '#001840' },
-                      'Outlook':           { bg: '#0078D4', border: '#006ABF' },
-                      'Excel':             { bg: '#217346', border: '#1A5C38' },
-                      'AI Builder':        { bg: '#CA5010', border: '#B0460D' },
-                      'Power Automate':    { bg: '#0066FF', border: '#0055D4' },
-                      'SharePoint':        { bg: '#038387', border: '#026E72' },
-                      'HTML/CSS/JS':       { bg: '#E44D26', border: '#CC3F1C' },
-                      'Prompt Engineering': { bg: '#9B4F96', border: '#854283' },
-                      'Next.js':           { bg: '#333333', border: '#262626' },
-                      'OpenAI API':        { bg: '#10A37F', border: '#0D8A6B' },
-                      'React':             { bg: '#0D99FF', border: '#0A82DB' },
-                      'Vercel Edge':       { bg: '#1A1A1A', border: '#111111' },
-                    };
-                    const colors = colorMap[tag] || { bg: '#555555', border: '#444444' };
-                    return (
-                      <div key={tag} style={{
-                        padding: '4px 12px',
-                        borderRadius: '100px',
-                        backgroundColor: colors.bg,
-                        border: `1.5px solid ${colors.border}`,
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        color: '#ffffff',
-                        letterSpacing: '0.06em',
-                        textTransform: 'uppercase',
-                        lineHeight: '1.4',
-                        boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
-                      }}>
-                        {tag}
-                      </div>
-                    );
-                  })}
+                  {tags.map((tag) => (
+                    <div key={tag} style={{
+                      padding: '3px 10px',
+                      borderRadius: '100px',
+                      backgroundColor: 'rgba(128, 128, 128, 0.1)',
+                      border: '1px solid rgba(128, 128, 128, 0.2)',
+                      fontSize: '0.7rem',
+                      fontWeight: 400,
+                      color: 'rgba(128, 128, 128, 0.9)',
+                      lineHeight: '1.5',
+                    }}>
+                      {tag}
+                    </div>
+                  ))}
                 </Flex>
               )}
             </Column>
@@ -152,7 +138,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     style={{ margin: "0", width: "fit-content" }}
                     href={href}
                   >
-                    <Text variant="body-default-s">Read case study</Text>
+                    <Text variant="body-default-s">{t.readCase}</Text>
                   </SmartLink>
                 )}
                 {link && (
@@ -161,7 +147,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     style={{ margin: "0", width: "fit-content" }}
                     href={link}
                   >
-                    <Text variant="body-default-s">Live demo</Text>
+                    <Text variant="body-default-s">{t.liveDemo}</Text>
                   </SmartLink>
                 )}
               </Flex>

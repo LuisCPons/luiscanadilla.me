@@ -13,7 +13,7 @@ const content = {
     headline: <>Power Platform & Microsoft Copilot specialist</>,
     subline: (
       <>
-        I design and ship Copilot Studio agents and Power Platform automations in production. Currently leading Copilot adoption at IE University across an 800+ case-per-year operations pipeline.
+        I design and ship Copilot Studio agents and Power Platform automations in production. Currently leading Copilot adoption at IE University.
         <br /><br />
         <strong>Open to Microsoft Copilot / Power Platform consultant roles — Madrid, EU remote, or hybrid.</strong>
         <br /><br />
@@ -25,7 +25,7 @@ const content = {
     headline: <>Especialista en Power Platform y Microsoft Copilot</>,
     subline: (
       <>
-        Diseño y despliego agentes de Copilot Studio y automatizaciones de Power Platform en producción. Actualmente liderando la adopción de Copilot en IE University en un pipeline operativo de más de 800 casos al año.
+        Diseño y despliego agentes de Copilot Studio y automatizaciones de Power Platform en producción. Actualmente liderando la adopción de Copilot en IE University.
         <br /><br />
         <strong>Abierto a roles de consultor Microsoft Copilot / Power Platform — Madrid, EU remoto o híbrido.</strong>
         <br /><br />
