@@ -17,7 +17,7 @@ import { useLang } from "@/components/LangContext";
 import styles from "./about.module.scss";
 import React from "react";
 
-const translations = {
+export const translations = {
   en: {
     intro: {
       title: "Introduction",
@@ -52,6 +52,28 @@ const translations = {
     },
     studies: {
       title: "Education",
+      institutions: [
+        {
+          name: "IE University Executive Education",
+          description: <>Generative AI: Unlocking Enterprise Value.<br/>In progress 2026 — Full Scholarship Awarded.</>,
+        },
+        {
+          name: "Founderz",
+          description: <>Master in AI & Innovation (online, 2026).</>,
+        },
+        {
+          name: "Universidad Complutense de Madrid & Universidad de Alcalá",
+          description: <>M.A., North American Studies (2021–2022).</>,
+        },
+        {
+          name: "Universidad Complutense de Madrid",
+          description: <>B.A., English Studies (2017–2021).</>,
+        },
+        {
+          name: "Universidad Politécnica de Madrid & Universidad de Castilla-La Mancha",
+          description: <>Computer Engineering — coursework in algorithms, data structures, OOP; transitioned to humanities.</>,
+        },
+      ],
     },
     certifications: {
       title: "Certifications",
@@ -109,6 +131,28 @@ const translations = {
     },
     studies: {
       title: "Educación",
+      institutions: [
+        {
+          name: "IE University Executive Education",
+          description: <>Generative AI: Unlocking Enterprise Value.<br/>En curso 2026 — Beca Completa.</>,
+        },
+        {
+          name: "Founderz",
+          description: <>Máster en IA e Innovación (online, 2026).</>,
+        },
+        {
+          name: "Universidad Complutense de Madrid & Universidad de Alcalá",
+          description: <>Máster Universitario en Estudios Norteamericanos (2021–2022).</>,
+        },
+        {
+          name: "Universidad Complutense de Madrid",
+          description: <>Grado en Estudios Ingleses (2017–2021).</>,
+        },
+        {
+          name: "Universidad Politécnica de Madrid & Universidad de Castilla-La Mancha",
+          description: <>Grado en Ingeniería Informática — cursos en algoritmos, estructuras de datos, POO; transición a humanidades.</>,
+        },
+      ],
     },
     certifications: {
       title: "Certificaciones",
@@ -162,11 +206,15 @@ export function AboutContent() {
           </Row>
           {person.languages && person.languages.length > 0 && (
             <Row wrap gap="8">
-              {person.languages.map((language, index) => (
-                <Tag key={index} size="l">
-                  {language}
-                </Tag>
-              ))}
+              <Tag size="l">
+                {lang === "en" ? "Spanish & Catalan — Native" : "Español y Catalán — Nativos"}
+              </Tag>
+              <Tag size="l">
+                {lang === "en" ? "English — C2" : "Inglés — C2"}
+              </Tag>
+              <Tag size="l">
+                {lang === "en" ? "Italian — B1" : "Italiano — B1"}
+              </Tag>
             </Row>
           )}
         </Column>
@@ -332,7 +380,7 @@ export function AboutContent() {
               {t.studies.title}
             </Heading>
             <Column fillWidth gap="l" marginBottom="40">
-              {about.studies.institutions.map((institution, index) => (
+              {t.studies.institutions.map((institution: any, index: number) => (
                 <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                   <Text id={institution.name} variant="heading-strong-l">
                     {institution.name}

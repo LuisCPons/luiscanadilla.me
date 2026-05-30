@@ -18,37 +18,6 @@ export async function generateMetadata() {
 }
 
 export default function About() {
-  const structure = [
-    {
-      title: about.intro.title,
-      display: about.intro.display,
-      items: [],
-    },
-    {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
-    },
-    ...(about.certifications?.display
-      ? [
-          {
-            title: about.certifications.title,
-            display: about.certifications.display,
-            items: about.certifications.groups.map((group) => group.title),
-          },
-        ]
-      : []),
-    {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
-    },
-  ];
   return (
     <Column maxWidth="l">
       <Schema
@@ -73,7 +42,7 @@ export default function About() {
           gap="32"
           s={{ hide: true }}
         >
-          <TableOfContents structure={structure} about={about} />
+          <TableOfContents about={about} />
         </Column>
       )}
       <AboutContent />

@@ -3,22 +3,48 @@
 import React from "react";
 import { Column, Flex, Text } from "@once-ui-system/core";
 import styles from "./about.module.scss";
+import { useLang } from "@/components/LangContext";
+import { translations } from "@/components/about/AboutContent";
 
 interface TableOfContentsProps {
-  structure: {
-    title: string;
-    display: boolean;
-    items: string[];
-  }[];
-  about: {
-    tableOfContent: {
-      display: boolean;
-      subItems: boolean;
-    };
-  };
+  about: any;
 }
 
-const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
+const TableOfContents: React.FC<TableOfContentsProps> = ({ about }) => {
+  const { lang } = useLang();
+  const t = translations[lang as keyof typeof translations];
+
+  const structure = [
+    {
+      title: t.intro.title,
+      display: about.intro.display,
+      items: [],
+    },
+    {
+      title: t.work.title,
+      display: about.work.display,
+      items: t.work.experiences.map((experience: any) => experience.company),
+    },
+    ...(about.certifications?.display
+      ? [
+          {
+            title: t.certifications.title,
+            display: about.certifications.display,
+            items: t.certifications.groups.map((group: any) => group.title),
+          },
+        ]
+      : []),
+    {
+      title: t.studies.title,
+      display: about.studies.display,
+      items: t.studies.institutions.map((institution: any) => institution.name),
+    },
+    {
+      title: about.technical.title,
+      display: about.technical.display,
+      items: about.technical.skills.map((skill: any) => skill.title),
+    },
+  ];
   const scrollTo = (id: string, offset: number) => {
     const element = document.getElementById(id);
     if (element) {
@@ -63,7 +89,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
             </Flex>
             {about.tableOfContent.subItems && (
               <>
-                {section.items.map((item, itemIndex) => (
+                {section.items.map((item: string, itemIndex: number) => (
                   <Flex
                     l={{ hide: true }}
                     key={itemIndex}
