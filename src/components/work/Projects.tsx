@@ -38,6 +38,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
           link={post.metadata.link || ""}
           tags={post.metadata.tags}
           metric={post.metadata.metric}
+          category={post.metadata.category}
         />
       ))}
     </Column>
