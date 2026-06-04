@@ -6,6 +6,7 @@ import {
   RevealFx,
   Column,
   Row,
+  Avatar,
 } from "@once-ui-system/core";
 import { useLang } from "./LangContext";
 
@@ -41,66 +42,43 @@ export function HeroSection() {
   const t = content[lang];
 
   return (
-    <>
-      <style>{`
-        .hero-layout {
-          display: flex;
-          align-items: center;
-          gap: 3rem;
-          width: 100%;
-          max-width: 960px;
-        }
-        .hero-text {
-          flex: 1;
-          min-width: 0;
-        }
-        .hero-photo {
-          flex-shrink: 0;
-          width: 200px;
-          height: 200px;
-          border-radius: 16px;
-          overflow: hidden;
-          border: 2px solid rgba(56, 189, 248, 0.25);
-          box-shadow: 0 8px 32px rgba(56, 189, 248, 0.08);
-        }
-        .hero-photo img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-        @media (max-width: 768px) {
-          .hero-layout {
-            flex-direction: column-reverse;
-            text-align: center;
-            gap: 2rem;
-          }
-          .hero-photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 12px;
-          }
-        }
-      `}</style>
-      <div className="hero-layout">
-        <div className="hero-text">
-          <RevealFx translateY="4" fillWidth paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
-              {t.headline}
-            </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {t.subline}
-            </Text>
-          </RevealFx>
-        </div>
+    <Row fillWidth gap="xl" vertical="center" s={{ direction: "column-reverse", gap: "l" }}>
+      <Column flex={7} gap="m" fillWidth>
+        <RevealFx translateY="4" fillWidth paddingBottom="16">
+          <Heading wrap="balance" variant="display-strong-l">
+            {t.headline}
+          </Heading>
+        </RevealFx>
+        <RevealFx translateY="8" delay={0.2} fillWidth paddingBottom="32">
+          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+            {t.subline}
+          </Text>
+        </RevealFx>
+      </Column>
+      <Column flex={3} horizontal="center" vertical="center" s={{ horizontal: "center" }}>
         <RevealFx translateY="4" delay={0.1}>
-          <div className="hero-photo">
-            <img src="/images/avatar.jpg" alt="Luis Cañadilla" />
+          <div style={{
+            width: '180px',
+            height: '180px',
+            borderRadius: '14px',
+            overflow: 'hidden',
+            border: '2px solid rgba(56, 189, 248, 0.2)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
+            flexShrink: 0,
+          }}>
+            <img
+              src="/images/avatar.jpg"
+              alt="Luis Cañadilla"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+              }}
+            />
           </div>
         </RevealFx>
-      </div>
-    </>
+      </Column>
+    </Row>
   );
 }
