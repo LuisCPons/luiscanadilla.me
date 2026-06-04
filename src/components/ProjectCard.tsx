@@ -43,7 +43,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const { lang } = useLang();
   const t = labels[lang];
   return (
-    <Column fillWidth gap="m">
+    <Column fillWidth gap="m" style={{ transition: 'transform 0.3s ease, box-shadow 0.3s ease' }} onMouseEnter={(e: any) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.3)'; }} onMouseLeave={(e: any) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}>
       {images && images.length > 0 && (
         <>
           <style>{`

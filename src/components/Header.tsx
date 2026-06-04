@@ -81,8 +81,22 @@ export const Header = () => {
           position: "fixed",
         }}
       >
-        <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>Madrid, Spain</Row>}
+        <Row paddingLeft="12" fillWidth vertical="center">
+          <a
+            href="/"
+            style={{
+              textDecoration: 'none',
+              fontWeight: 800,
+              fontSize: '1.1rem',
+              letterSpacing: '-0.03em',
+              color: '#38bdf8',
+              transition: 'opacity 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+          >
+            LC
+          </a>
         </Row>
         <Row fillWidth horizontal="center">
           <Row
