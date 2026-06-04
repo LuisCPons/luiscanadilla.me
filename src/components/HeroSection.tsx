@@ -42,8 +42,8 @@ export function HeroSection() {
   const t = content[lang];
 
   return (
-    <Row fillWidth gap="xl" vertical="start" s={{ direction: "column-reverse", gap: "l" }}>
-      <Column flex={6} gap="m" fillWidth>
+    <Row fillWidth gap="xl" vertical="center" s={{ direction: "column-reverse", gap: "l" }}>
+      <Column flex={7} gap="m" fillWidth>
         <RevealFx translateY="4" fillWidth paddingBottom="16">
           <Heading wrap="balance" variant="display-strong-l">
             {t.headline}
@@ -55,16 +55,17 @@ export function HeroSection() {
           </Text>
         </RevealFx>
       </Column>
-      <Column flex={4} horizontal="center" vertical="start" paddingTop="8" s={{ horizontal: "center", paddingTop: "0" }}>
-        <RevealFx translateY="4" delay={0.1}>
+      <Column flex={5} horizontal="end" vertical="center" s={{ horizontal: "center" }}>
+        <RevealFx translateY="4" delay={0.1} fillWidth>
           <div style={{
-            width: '220px',
-            height: '220px',
-            borderRadius: '16px',
+            width: '100%',
+            maxWidth: '360px',
+            aspectRatio: '3/4',
+            borderRadius: '24px',
             overflow: 'hidden',
-            border: '2px solid rgba(56, 189, 248, 0.2)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
-            flexShrink: 0,
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)',
+            margin: '0 auto',
           }}>
             <img
               src="/images/avatar.jpg"
