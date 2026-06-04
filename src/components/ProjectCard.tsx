@@ -36,9 +36,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           max-height: 460px;
           border-radius: 20px;
           overflow: hidden;
-          background-color: var(--surface);
-          border: 1px solid var(--neutral-medium);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          background-color: #ffffff; /* Forced white background */
+          border: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for light mode */
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
           transition: all 0.2s ease-out;
           cursor: pointer;
           display: flex;
@@ -47,15 +47,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         
         .premium-project-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-          border-color: rgba(255, 255, 255, 0.15);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+          border-color: rgba(0, 0, 0, 0.15);
         }
 
         .project-card-image-container {
           height: 55%;
           width: 100%;
           overflow: hidden;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
+          border-bottom: 1px solid rgba(0,0,0,0.05); /* Darker border for light mode */
         }
 
         .project-card-image {
@@ -111,21 +111,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <Column>
               {/* 1. Category */}
               {category && (
-                <Text style={{ fontSize: '12px', fontWeight: 600, color: '#a3a3a3', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '12px' }}>
+                <Text style={{ fontSize: '12px', fontWeight: 600, color: 'rgb(115,115,115)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '12px' }}>
                   {category}
                 </Text>
               )}
 
               {/* 2. Metric (Highest Priority) */}
               {metric && (
-                <Text style={{ fontSize: '28px', fontWeight: 700, color: '#ffffff', lineHeight: '1.1', marginBottom: '16px' }}>
+                <Text style={{ fontSize: '28px', fontWeight: 700, color: 'rgb(17,24,39)', lineHeight: '1.1', marginBottom: '16px' }}>
                   {metric}
                 </Text>
               )}
               
               {/* 3. Description */}
               {description && (
-                <Text style={{ fontSize: '15px', color: '#a3a3a3', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', maxWidth: '90%' }}>
+                <Text style={{ fontSize: '15px', color: 'rgb(75,85,99)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', maxWidth: '90%' }}>
                   {description}
                 </Text>
               )}
@@ -138,17 +138,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   <div key={tag} style={{
                     padding: '4px 12px',
                     borderRadius: '100px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.03)',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
                     fontSize: '13px',
-                    color: '#d4d4d4',
+                    color: 'rgb(107,114,128)',
                   }}>
                     {tag}
                   </div>
                 ))}
               </Row>
               
-              <Icon name="arrowRight" size="m" style={{ color: '#a3a3a3' }} />
+              <Icon name="arrowRight" size="m" style={{ color: 'rgb(17,24,39)' }} />
             </Row>
           </div>
         </div>
