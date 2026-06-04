@@ -1,180 +1,159 @@
 "use client";
 
-import {
-  AvatarGroup,
-  Carousel,
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
-} from "@once-ui-system/core";
-import { useLang } from "./LangContext";
-
-const labels = {
-  en: { readCase: "Read case study", liveDemo: "Live demo" },
-  es: { readCase: "Leer caso de estudio", liveDemo: "Demo en vivo" },
-};
+import { Column, Row, Heading, Text, Icon } from "@once-ui-system/core";
+import Link from "next/link";
 
 interface ProjectCardProps {
   href: string;
-  priority?: boolean;
   images: string[];
   title: string;
-  content: string;
   description: string;
-  avatars: { src: string }[];
-  link: string;
   tags?: string[];
   metric?: string;
+  priority?: boolean;
+  content?: string;
+  avatars?: { src: string }[];
+  link?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
   images = [],
   title,
-  content,
   description,
-  avatars,
-  link,
   tags = [],
   metric,
 }) => {
-  const { lang } = useLang();
-  const t = labels[lang];
   return (
-    <Column fillWidth gap="m" style={{ transition: 'transform 0.3s ease, box-shadow 0.3s ease' }} onMouseEnter={(e: any) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.3)'; }} onMouseLeave={(e: any) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}>
-      {images && images.length > 0 && (
-        <>
-          <style>{`
-            .project-screenshot {
-              height: 360px;
-              width: 100%;
-              position: relative;
-            }
-            @media (max-width: 640px) {
-              .project-screenshot {
-                height: 220px;
-              }
-            }
-            @media (min-width: 641px) and (max-width: 1024px) {
-              .project-screenshot {
-                height: 280px;
-              }
-            }
-          `}</style>
-          <div style={{
-            borderRadius: '12px',
-            overflow: 'hidden',
-            width: '100%',
-            backgroundColor: '#0a0a0a',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
-          }}>
-            {/* macOS Browser Header */}
-            <div style={{
-              height: '32px',
-              backgroundColor: '#1c1c1e',
-              display: 'flex',
-              alignItems: 'center',
-              padding: '0 16px',
-              borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-              gap: '8px',
-            }}>
-              <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ff5f56' }} />
-              <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
-              <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#27c93f' }} />
-            </div>
-            
-            {/* Browser Content (Screenshot) */}
-            <div className="project-screenshot">
+    <>
+      <style>{`
+        .premium-project-card {
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
+          aspect-ratio: 1.6;
+          border-radius: 20px;
+          overflow: hidden;
+          background-color: var(--surface);
+          border: 1px solid var(--neutral-medium);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .premium-project-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .premium-project-card:hover .project-card-image {
+          transform: scale(1.08);
+        }
+
+        .project-card-image-container {
+          height: 55%;
+          width: 100%;
+          overflow: hidden;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .project-card-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 20%;
+          transform: scale(1.03);
+          transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+          display: block;
+        }
+
+        .project-card-content {
+          height: 45%;
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        /* Mobile specific overrides */
+        @media (max-width: 768px) {
+          .premium-project-card {
+            aspect-ratio: auto;
+            min-height: 480px;
+          }
+          .project-card-image-container {
+            height: 220px;
+            flex-shrink: 0;
+          }
+          .project-card-content {
+            height: auto;
+            flex-grow: 1;
+            padding: 24px;
+          }
+        }
+      `}</style>
+      
+      <Link href={href} style={{ textDecoration: 'none', width: '100%' }}>
+        <div className="premium-project-card">
+          {/* TOP 55%: MEDIA */}
+          {images && images.length > 0 && (
+            <div className="project-card-image-container">
               <img
                 src={images[0]}
                 alt={title}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'top center',
-                  display: 'block',
-                }}
+                className="project-card-image"
               />
             </div>
-          </div>
-        </>
-      )}
-      <Column
-        fillWidth
-        paddingX="24"
-        paddingY="24"
-        gap="l"
-        background="surface"
-        border="neutral-medium"
-        radius="l"
-        style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}
-      >
-        <Flex s={{ direction: "column" }} fillWidth gap="l">
-          {title && (
-            <Column flex={5} gap="16">
-              <Heading as="h2" wrap="balance" variant="heading-strong-l">
-                {title}
-              </Heading>
-              {tags && tags.length > 0 && (
-                <Flex gap="8" wrap>
-                  {tags.map((tag) => (
-                    <div key={tag} style={{
-                      padding: '3px 10px',
-                      borderRadius: '100px',
-                      backgroundColor: 'rgba(128, 128, 128, 0.1)',
-                      border: '1px solid rgba(128, 128, 128, 0.2)',
-                      fontSize: '0.7rem',
-                      fontWeight: 400,
-                      color: 'rgba(128, 128, 128, 0.9)',
-                      lineHeight: '1.5',
-                    }}>
-                      {tag}
-                    </div>
-                  ))}
-                </Flex>
-              )}
-            </Column>
           )}
-          {(description?.trim() || content?.trim() || metric) && (
-            <Column flex={7} gap="16">
+
+          {/* BOTTOM 45%: CONTENT */}
+          <div className="project-card-content" style={{ height: images && images.length > 0 ? undefined : '100%' }}>
+            <Column gap="xs">
+              {/* 1. Metric (Highest Priority) */}
               {metric && (
-                <Text variant="body-strong-m" onBackground="brand-strong">
+                <Text style={{ fontSize: '32px', fontWeight: 700, color: '#38bdf8', lineHeight: '1.2' }}>
                   {metric}
                 </Text>
               )}
-              {description?.trim() && (
-                <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
+              
+              {/* 2. Title */}
+              <Heading as="h3" style={{ fontSize: '24px', fontWeight: 600, color: '#ffffff', lineHeight: '1.3', marginTop: metric ? '4px' : '0' }}>
+                {title}
+              </Heading>
+              
+              {/* 3. Description */}
+              {description && (
+                <Text style={{ fontSize: '16px', color: '#a3a3a3', marginTop: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {description}
                 </Text>
               )}
-              <Flex gap="24" wrap>
-                {content?.trim() && (
-                  <SmartLink
-                    suffixIcon="arrowRight"
-                    style={{ margin: "0", width: "fit-content" }}
-                    href={href}
-                  >
-                    <Text variant="body-default-s">{t.readCase}</Text>
-                  </SmartLink>
-                )}
-                {link && (
-                  <SmartLink
-                    suffixIcon="arrowUpRightFromSquare"
-                    style={{ margin: "0", width: "fit-content" }}
-                    href={link}
-                  >
-                    <Text variant="body-default-s">{t.liveDemo}</Text>
-                  </SmartLink>
-                )}
-              </Flex>
             </Column>
-          )}
-        </Flex>
-      </Column>
-    </Column>
+
+            {/* 4. Tags & Icon Footer */}
+            <Row fillWidth vertical="center" horizontal="between" paddingTop="16">
+              <Row gap="8" wrap>
+                {tags.slice(0, 4).map((tag) => (
+                  <div key={tag} style={{
+                    padding: '4px 12px',
+                    borderRadius: '100px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    fontSize: '13px',
+                    color: '#d4d4d4',
+                  }}>
+                    {tag}
+                  </div>
+                ))}
+              </Row>
+              
+              <Icon name="arrowRight" size="m" style={{ color: '#a3a3a3' }} />
+            </Row>
+          </div>
+        </div>
+      </Link>
+    </>
   );
 };
