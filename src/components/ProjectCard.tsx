@@ -32,8 +32,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           width: 100%;
           max-width: 800px;
           margin: 0 auto;
-          aspect-ratio: 1.75; /* Makes the card shorter (max height ~450px) */
-          max-height: 460px;
+          aspect-ratio: 1.75; /* Makes the card shorter */
+          height: auto;
+          min-height: 460px;
           border-radius: 20px;
           overflow: hidden;
           background-color: #ffffff; /* Forced white background */
@@ -67,8 +68,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         }
 
         .project-card-content {
-          height: 45%;
-          padding: 24px 32px;
+          flex: 1;
+          padding: 24px 32px 32px 32px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -88,7 +89,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           .project-card-content {
             height: auto;
             flex-grow: 1;
-            padding: 24px;
+            padding: 24px 24px 32px 24px;
           }
         }
       `}</style>
