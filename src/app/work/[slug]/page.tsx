@@ -118,47 +118,7 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
-        <div style={{
-          borderRadius: '12px',
-          overflow: 'hidden',
-          width: '100%',
-          backgroundColor: '#0a0a0a',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
-          marginBottom: '40px'
-        }}>
-          {/* macOS Browser Header */}
-          <div style={{
-            height: '32px',
-            backgroundColor: '#1c1c1e',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 16px',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-            gap: '8px',
-          }}>
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ff5f56' }} />
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#27c93f' }} />
-          </div>
-          
-          {/* Browser Content (Screenshot) */}
-          <div style={{ height: '360px', width: '100%', position: 'relative' }}>
-            <img
-              src={post.metadata.images[0]}
-              alt="image"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'top center',
-                display: 'block',
-              }}
-            />
-          </div>
-        </div>
-      )}
+
       <Column style={{ margin: "auto" }} as="article" maxWidth="m">
         <CustomMDX source={post.content} />
       </Column>
